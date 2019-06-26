@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: mglearn
+Version: 0.1.7
+Summary: Helper functions for the book 'Introduction to machine learning with Python'
+Home-page: https://github.com/amueller/introduction_to_ml_with_python
+Author: Andreas Mueller
+Author-email: t3kcit@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: machine learning ml sklearn scikit learn
+Platform: UNKNOWN

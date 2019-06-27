@@ -17,9 +17,12 @@ jQuery(document).ready(function($) {
 		$('#dropDownMac').hide()
 	}
 
+	var events = []
+
 	$('#submitBtn').click(function(){
 		$.ajax({
-			url: 'http://localhost:8000/wifi/date/',
+			url: 'http://localhost:8000/wifi/isHear/',
+			// url: 'http://localhost:8000/wifi/calender/',
 			data: {
 				't1': $('#form_date1').val(),
 				't2': $('#form_date2').val(),
@@ -28,6 +31,54 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (res) {
 				console.log(res)
+				if(res['result'] == "true"){
+					$('#result').text('There is!!!')
+					$('#result').css('color', '#418cff')
+
+					$.ajax({
+						url: 'http://localhost:8000/wifi/getCalendarHours/',
+						data:{
+							'macAddr': $('#MAC').val()
+						},
+						type: 'POST',
+						success: function (res){
+
+							for(var i=0; i<res.length; i++){
+								for(var key in res[i]){
+									if(res[i][key] != 0){
+										events.push({
+											title: res[i][key],
+											start: key
+										})
+									}
+								}
+							}
+
+							var calendarEl = document.getElementById('calendar');
+	
+							var calendar = new FullCalendar.Calendar(calendarEl, {
+								plugins: [ 'interaction', 'dayGrid' ],
+								defaultDate: '2019-06-12',
+								editable: true,
+								eventLimit: true,
+								events});
+							
+							calendar.render();
+							
+						},
+						error: function (error) {
+							console.log(res)
+						}
+					})
+
+				}
+				else{
+					$('#result').text('Nop!!')
+					$('#result').css('color', 'red')
+				}
+
+				$('#result-modal').modal()
+					
 			},
 			error: function (error) {
 					console.log(error);

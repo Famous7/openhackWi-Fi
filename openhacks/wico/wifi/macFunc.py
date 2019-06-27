@@ -34,6 +34,7 @@ def macHour(mac):
         return output
 
 
+
 def macCalender(mac,pick):
         dic = {}
         output = {}

@@ -9,6 +9,8 @@ import json
 from django.http import HttpResponse, JsonResponse
 from .macFunc import *
 from django.views.decorators.csrf import csrf_exempt
+import pymysql
+
 
 def index(request):
     return render(request, 'wifi/index.html', {
@@ -33,16 +35,84 @@ def macList(request):
     return render(request, 'wifi/MAC.html', {
         })
 
+# @csrf_exempt
+# def isHear(request):
+#         sql = ''
+#         if request.method == 'POST':
+#                 mac = request.POST.get('macAddr')
+#                 t1 = request.POST.get('t1')
+#                 t2 = request.POST.get('t2')
+
 @csrf_exempt
-def getDate(reqeust): #json
+def getCalendarHours(request):
+        ret = []
+        conn = pymysql.connect(host='10.10.4.102', port=3306, user='openhack', passwd='wifi', db='openhack')
+        with conn.cursor() as cursor:
+                sql = 'select sniff_time from device_list where sniff_time >= %s and sniff_time <= %s and mac_list like %s'
+                mac = request.POST.get('macAddr')
+
+                cursor.execute(sql, ('2019-06-27', '2019-06-28', '%{0}%'.format(mac)))
+                data = cursor.fetchall()
+
+                if len(data) >= 2:
+                        print(len(data))
+                        end_time = time.mktime(data[len(data)-1][0].timetuple())
+                        start_time = time.mktime(data[0][0].timetuple())
+
+                        diff = (end_time - start_time) / 3600
+                        ret.append({'2019-06-27':diff})
+                else:
+                        ret.append({'2019-06-27':0})
+
+                cursor.execute(sql, ('2019-06-28', '2019-06-29', '%{0}%'.format(mac)))
+                data = cursor.fetchall()
+
+                if len(data) >= 2:
+                        print(len(data))
+                        end_time = time.mktime(data[len(data)-1][0].timetuple())
+                        start_time = time.mktime(data[0][0].timetuple())
+
+                        diff = (end_time - start_time) / 3600
+                        ret.append({'2019-06-28':diff})
+                else:
+                        ret.append({'2019-06-28':0})
+
+                return JsonResponse(ret, safe=False)
+
+        conn.close()
+
+@csrf_exempt
+def isHear(request):
+        ret = {}
+        conn = pymysql.connect(host='10.10.4.102', port=3306, user='openhack', passwd='wifi', db='openhack')
+        with conn.cursor() as cursor:
+                sql = 'select list_seq from device_list where sniff_time >= %s and sniff_time <= %s and mac_list like %s'
+                mac = request.POST.get('macAddr')
+                t1 = request.POST.get('t1')
+                t2 = request.POST.get('t2') 
+
+                cursor.execute(sql, (t1,t2,'%{0}%'.format(mac)))
+                data = cursor.fetchall()
+
+                if len(data) > 0:
+                        ret['result'] = 'true'
+                else:
+                        ret['result'] = 'false'
+
+        conn.close()
+
+        return JsonResponse(ret, safe=False)
+
+
+
+@csrf_exempt
+def getDate(request): #json
         macList =[]
         dateList = []
-        toString = ''
-        dic = {}
-        if reqeust.method == 'POST':
-                mac = reqeust.POST.get('macAddr')
-                t1 = reqeust.POST.get('t1')
-                t2 = reqeust.POST.get('t2')
+        if request.method == 'POST':
+                mac = request.POST.get('macAddr')
+                t1 = request.POST.get('t1')
+                t2 = request.POST.get('t2')
                 t1 = datetime.strptime(t1, '%Y-%m-%d').timetuple()
                 t2 = datetime.strptime(t2, '%Y-%m-%d').timetuple()
                 t1 = time.mktime(t1)
@@ -54,22 +124,14 @@ def getDate(reqeust): #json
 
                 for idx, val in enumerate(qs):
                         t = val.sniff_time.timestamp()
-                        if t >= t1 and t <=t2:
+                        if t >= t1 or t <=t2:
                                 macList.append(val.mac_list.split(","))
                 for idx, val in enumerate(macList):
                         if mac in val:
-                                dateList.append(qs[idx].sniff_time)
-                for date in dateList:
-                        pick = ''
-                        pick += str(date.year)
-                        pick += str(date.month)
-                        pick += str(date.day)
-                        stayTime,inTime,outTime  = macCalender(mac,pick)
-                        dic[str(date)]=stayTime
- 
-                j = [{'dateList': dic}]
+                                dateList.append(qs[idx].sniff_time) 
+                j = [{'dateList': dateList}]
                 return JsonResponse(j, safe=False)
-        return render(reqeust, 'wifi/date.html', {
+        return render(request, 'wifi/date.html', {
         })
 #json
 @csrf_exempt
@@ -93,10 +155,11 @@ def getMacHour(request):
 def getMacCalender(request):
         if request.method == 'POST':
                 mac = request.POST.get('macAddr')
-                pick = request.POST.get('pick')
+                t1 = request.POST.get('t1')
+                print(t1)
                 # mac = 'a8:2b:b9:f0:52:94'
                 # pick = '2019627'
-                stayTime,inTime,outTime  = macCalender(mac,pick)
+                stayTime,inTime,outTime  = macCalender(mac,t1)
                 j = [{'stayTime':stayTime,'inTime':inTime,'outTime':outTime}]
                 return JsonResponse(j, safe=False)  
         #         return render(request, 'wifi/date.html', {

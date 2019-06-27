@@ -13,4 +13,6 @@ urlpatterns = [
     path('devicecount/', views.deviceCount, name = 'devicecount'),
     path('calender/', views.getMacCalender, name = 'maccalender'),
     path('dayCount/',views.twoDayCount,name='twoDayCount'),
+    path('isHear/',views.isHear,name='isHear'),
+    path('getCalendarHours/',views.getCalendarHours,name='getCalendarHours'),
 ]

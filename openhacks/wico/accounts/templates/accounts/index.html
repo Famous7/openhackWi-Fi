@@ -11,9 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-
-    <!-- changed -->
-    <link rel="shortcut icon" href="images/wico_w_logo.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -23,15 +21,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-
-        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js">
-        /script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
    <style>
     #weatherWidget .currentDesc {
@@ -68,7 +63,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <a class="navbar-brand" href="./"><img src="images/wico_logo_white.png" alt="Logo"></a>
-
+                    
                     <!-- added -->
                     <li class="menu-item-has-children dropdown">
                         <!-- <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a> -->
@@ -94,112 +89,141 @@
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
         <!-- Header-->
-
+        
         <!-- /#header -->
         <!-- Content -->
-        <!-- changed -->
-        <div class="content" style="background-color: #f4f8f9">
+        <div class="content">
             <!-- Animated -->
             <div class="animated fadeIn">
-                <!--  Traffic  -->
+                <!-- Widgets  -->
                 <div class="row">
-                  <div class="col-lg-12">
-                    <div class="card">
-                      <div class="row">
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <p>Start Date</p>
-                            <input type="text" class="form-control">
-                          </div>
+                    
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-1">
+                                        <i class="pe-7s-cash"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text">$<span class="count">23569</span></div>
+                                            <div class="stat-heading">Revenue</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <p>End Date</p>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <p>User Name</p>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <p>Device MAC</p>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
+                    </div> -->
 
-
-                      </div>
-                      <div class="button-area">
-                        <div></div>
-                        <button>test</button>
-                      </div>
-
-                      <!-- <div class="row">
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <input type="text" class="form-control">
-                          </div>
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-2">
+                                        <i class="pe-7s-cart"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">3435</span></div>
+                                            <div class="stat-heading">Sales</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <input type="text" class="form-control">
-                          </div>
+                    </div> -->
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            
                         </div>
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <input type="text" class="form-control">
-                          </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-3">
+                                        <i class="pe-7s-browser"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">349</span></div>
+                                            <div class="stat-heading">Time</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-3">
-                          <div class="card-body">
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-
-                      </div> -->
                     </div>
 
-                  </div>
-
-                </div><!-- /.row -->
-
-
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-4">
+                                        <i class="pe-7s-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">2986</span></div>
+                                            <div class="stat-heading">people</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widgets -->
                 <!--  Traffic  -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
+                            <div class="card-body">
+                                <h4 class="box-title">Traffic </h4>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="card-body">
                                         <!-- <canvas id="TrafficChart"></canvas>   -->
-                                        <div id="calendar"></div>
+                                        <div id="traffic-chart" class="traffic-chart"></div>
                                     </div>
+                                    <!-- added -->
+                                    <div class="card br-0">
+                                            <div class="card-body">
+                                                <div class="chart-container ov-h">
+                                                    <div id="flotPie1" class="float-chart"></div>
+                                                </div>
+                                            </div>
+                                    </div><!-- /.card -->
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card-body">
+                                    </div> <!-- /.card-body -->
                                 </div>
                             </div> <!-- /.row -->
+                            <div class="card-body"></div>
                         </div>
                     </div><!-- /# column -->
                 </div>
                 <!--  /Traffic -->
-
+                <div class="clearfix"></div>
                 <!-- Orders -->
                 <div class="orders">
                     <div class="row">
                         <div class="col-xl-8">
                             <div class="card">
-
+                                
                             </div> <!-- /.card -->
                         </div>  <!-- /.col-lg-8 -->
 
-
+                        
                     </div>
                 </div>
                 <!-- /.orders -->
                 <!-- To Do and Live Chat -->
-
+              
                 <!-- /To Do and Live Chat -->
                 <!-- Calender Chart Weather  -->
                 <div class="row">
@@ -268,6 +292,18 @@
         <!-- /.content -->
         <div class="clearfix"></div>
         <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2018 Ela Admin
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Designed by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!-- /.site-footer -->
     </div>
     <!-- /#right-panel -->
@@ -293,88 +329,128 @@
     <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
     <script src="assets/js/init/weather-init.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-    <script src="assets/js/init/fullcalendar-init.js"></script> -->
+    <script src="assets/js/init/fullcalendar-init.js"></script>
 
     <!--Local Stuff-->
+    <script>
+        jQuery(document).ready(function($) {
+            "use strict";
 
-    <link href='./packages/core/main.css' rel='stylesheet' />
-    <link href='./packages/daygrid/main.css' rel='stylesheet' />
-    <script src='./packages/core/main.js'></script>
-    <script src='./packages/interaction/main.js'></script>
-    <script src='./packages/daygrid/main.js'></script>
+            // Pie chart flotPie1
+            var piedata = [
+                { label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},
+                { label: "Tab visits", data: [[1,33]], color: '#ef5350'},
+                { label: "Mobile visits", data: [[1,35]], color: '#66bb6a'}
+            ];
 
-<script>
+            $.plot('#flotPie1', piedata, {
+                series: {
+                    pie: {
+                        show: true,
+                        radius: 1,
+                        innerRadius: 0.65,
+                        label: {
+                            show: true,
+                            radius: 2/3,
+                            threshold: 1
+                        },
+                        stroke: {
+                            width: 0
+                        }
+                    }
+                },
+                grid: {
+                    hoverable: true,
+                    clickable: true
+                }
+            });
+            
+            // Traffic Chart using chartist
+            if ($('#traffic-chart').length) {
+                var chart = new Chartist.Line('#traffic-chart', {
+                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  series: [
+                  [0, 18000, 35000,  25000,  22000,  0],
+                  [0, 33000, 15000,  20000,  15000,  300],
+                  [0, 15000, 28000,  15000,  30000,  5000]
+                  ]
+              }, {
+                  low: 0,
+                  showArea: true,
+                  showLine: false,
+                  showPoint: false,
+                  fullWidth: true,
+                  axisX: {
+                    showGrid: true
+                }
+            });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+                chart.on('draw', function(data) {
+                    if(data.type === 'line' || data.type === 'area') {
+                        data.element.animate({
+                            d: {
+                                begin: 2000 * data.index,
+                                dur: 2000,
+                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                                to: data.path.clone().stringify(),
+                                easing: Chartist.Svg.Easing.easeOutQuint
+                            }
+                        });
+                    }
+                });
+            }
+            // Traffic Chart using chartist End
+            //Traffic chart chart-js
+            if ($('#TrafficChart').length) {
+                var ctx = document.getElementById( "TrafficChart" );
+                ctx.height = 150;
+                var myChart = new Chart( ctx, {
+                    type: 'line',
+                    data: {
+                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
+                        datasets: [
+                        {
+                            label: "Visit",
+                            borderColor: "rgba(4, 73, 203,.09)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(4, 73, 203,.5)",
+                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
+                        },
+                        {
+                            label: "Bounce",
+                            borderColor: "rgba(245, 23, 66, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(245, 23, 66,.5)",
+                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
+                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
+                        },
+                        {
+                            label: "Targeted",
+                            borderColor: "rgba(40, 169, 46, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(40, 169, 46, .5)",
+                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
+                            data: [1000, 5200, 3600, 2600, 4200, 5300, 0 ]
+                        }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        }
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '2019-06-12',
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2019-06-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2019-06-07',
-          end: '2019-06-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2019-06-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2019-06-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2019-06-11',
-          end: '2019-06-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2019-06-12T10:30:00',
-          end: '2019-06-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2019-06-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2019-06-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2019-06-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2019-06-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2019-06-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2019-06-28'
-        }
-      ]
-    });
-
-    calendar.render();
-});
-</script>
+                    }
+                } );
+            }
+        });
+    </script>
 </body>
 </html>

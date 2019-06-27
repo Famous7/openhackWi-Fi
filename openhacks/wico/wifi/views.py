@@ -16,7 +16,7 @@ def main(request):
 def macList(request):
 #     userId = 3
     if request.method == 'POST':
-        userId = request.POST['pk']
+        userId = request.POST.get('pk')
         qs = Device.objects.filter(user_name=userId)
         return render(request, 'wifi/MAC.html', {
             'qs': qs
@@ -29,9 +29,9 @@ def getDate(reqeust): #json
         macList =[]
         dateList = []
         if reqeust.method == 'POST':
-                mac = request.POST.get('macAddr')
-                t1 = request.POST.get('t1')
-                t2 = request.POST.get('t2')
+                mac = reqeust.POST.get('macAddr')
+                t1 = float(reqeust.POST.get('t1'))
+                t2 = float(reqeust.POST.get('t2'))
 
                 qs = DeviceList.objects.all()
                 # t1 = 1561593600.0
@@ -86,6 +86,7 @@ def getMacCalender(request):
 # deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
 @csrf_exempt
 def deviceCount (request):
-        timequeryset = DeviceList.objects.all()
-        data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
-        return JsonResponse(data[-1], safe=False)
+        if request.method == 'POST':
+                timequeryset = DeviceList.objects.all()
+                data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
+                return JsonResponse(data[-1], safe=False)

@@ -7,5 +7,4 @@ urlpatterns = [
     path('',views.main,name='main'),
     path('register/',views.register, name='register'),
     path('macdup/',views.macdup, name='macdup'),
-
 ]

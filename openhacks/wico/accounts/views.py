@@ -1,35 +1,35 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from .models import UserModel,HardwareModel
+from .models import Users,Device
 from .forms import registerForm
 from django.utils import timezone
 from django.conf import settings    
 
 def main(request):
     pass
-    
+
 def register(request):
     if request.method == 'POST':
         form = registerForm(request.POST)
         macAddr = request.POST['macAddr']
-        hardwareCheck = HardwareModel.objects.filter(macAddr=macAddr)
+        hardwareCheck = Device.objects.filter(device_mac=macAddr)
         if hardwareCheck:
             return render(request, 'accounts/registration.html', {
-          'form': form,'duplicated':True
-        })
+                'form': form,'duplicated':True
+              })
         if form.is_valid():
             name = request.POST['name']
-            hardware = HardwareModel()
-            user = UserModel.objects.filter(name=name)
+            hardware = Device()
+            user = Users.objects.filter(user_name=name)
             if not user: # init
-                user = UserModel()
-                user.name = name
-                user.created = timezone.now()
+                user = Users()
+                user.user_name = name
+                user.regi_date = timezone.now()
                 user.save()
-                hardware.username = user
+                hardware.user_name = user
             else:    
-                hardware.username = user[0]
-            hardware.name = request.POST['hardwareName']
-            hardware.macAddr = macAddr
+                hardware.user_name = user[0]
+            hardware.device_name = request.POST['hardwareName']
+            hardware.device_mac = macAddr
             hardware.save()
             return render(request, 'accounts/registration.html', {
                 'user': user,'hardware':hardware

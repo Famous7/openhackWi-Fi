@@ -16,4 +16,4 @@ class DeviceList(models.Model):
     class Meta:
         db_table = "device_list"
     def __str__(self):
-        return self.list_seq
+        return str(self.list_seq)

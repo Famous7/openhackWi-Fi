@@ -15,5 +15,6 @@ class DeviceList(models.Model):
     device_count = models.IntegerField()
 
     class Meta:
-        managed = False
-        db_table = 'device_list'
+        db_table = "device_list"
+    def __str__(self):
+        return str(self.list_seq)

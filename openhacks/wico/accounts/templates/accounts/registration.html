@@ -1,177 +1,213 @@
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WICO</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Te4m_G0host Wireless Footprint[WFP]</title>
+    {% comment %} <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png"> {% endcomment %}
 
-    <!-- Bootstrap Core CSS -->
-    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
 
-    <!-- MetisMenu CSS -->
-    <link href="/static/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- Custom CSS -->
-    <link href="/static/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="/static/vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
-
 <body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.jsp">Wireless Footprint v2.1.0</a>
-            </div>
-            <!-- /.navbar-header -->
+    <!-- Left Panel -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <img src="../image/logo.png" class="img-thumbnail">
-                        </li>
-                        <li>
-                            <a href="index.jsp"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
 
-                        <li>
-                          <a href="registration.jsp"><i class="fa fa-edit fa-fw"></i> Registration Form</a>
-                        </li>
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <a class="navbar-brand" href="./"><img src="/static/images/wico_logo_white.png" alt="Logo"></a>
 
-                        <li>
-                            <a href="userInfoTable.jsp"><i class="fa fa-table fa-fw"></i> User Info Table</a>
-                        </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-search fa-fw"></i>Search<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="timeBasedSearch.jsp">Search Form</a>
-                                </li>
-                                <li>
-                                    <a href="userBasedSearch.jsp">Test</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
+                    <!-- added -->
+                    <li class="menu-item-has-children dropdown">
+                        <!-- <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a> -->
+                        <a href="index.html"><img class="img-adjust" src="/static/images/menu_dashboard.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp DASHBOARD </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <!-- original -->
+                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a> -->
+                        <a href="index.html"><img class="img-adjust" src="/static/images/menu_search.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="index.html"><img class="img-adjust" src="/static/images/menu_locate.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="register.html"><img class="img-adjust" src="/static/images/menu_register.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp REGISTER</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
         </nav>
+    </aside><!-- /#left-panel -->
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">User Registeration Form</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> User Information
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                        <form method="POST" class="post-form">{% csrf_token %}
-                            <div class="form-group">
-                            <label class="col-lg-3 control-label" for="users">User Name</label>
-                            <div class="col-lg-6">
-                              <input class="form-control" id="user" name="name" type="text" placeholder="유명성">
-                            </div>
-                            <!-- /.col-sm-6 -->
-                          </div>
-                          <!-- /.form-group -->
-                          <div class="form-group">
-                            <label class="col-lg-3 control-label" for="MAC">Device MAC</label>
-                            <div class="col-lg-6">
-                              <div class="input-group">
-                                <input class="form-control" id="MAC" name="macAddr" type="text" placeholder="00:00:00:00:00:00">
-                                <span class="input-group-btn">
-                                  <button type="submit" class="btn btn-success">중복확인 <i class="fa fa-check"></i></button>
-                                </span>
-                              </div>
-                              <!-- /.input-group -->
-                              <p class="help-block">Device MAC Address can't be duplicated</p>
-                            </div>
-                            <!-- /.col-sm-6 -->
-                          </div>
-                          <!-- /.form-group -->
-                          <div class="form-group">
-                            <label class="col-lg-3 control-label" for="devName">Device Name</label>
-                            <div class="col-lg-6">
-                              <input class="form-control" id="devName" name="hardwareName" type="text" placeholder="유명성의 아이폰XS">
-                              <p class="help-block">The device name can be entered freely</p>
-                            </div>
-                            <!-- /.col-lg-6 -->
-                          </div>
-                          <!-- /.form-group -->
-                          <div class="col-lg-12">
-                    		<div class="form-group text-center">
-                        		<button type="submit" class="btn btn-success">Submit <i class="fa fa-check spaceLeft"></i></button>
-                        		<button type="reset" class="btn btn-warning" onclick="location.href='{% url 'accounts:register'%}'"> Reset <i class="fa fa-times spaceLeft"></i></button>
-                    		</div>
-                    		<!-- /.form-group -->
-                  		</div>
-                  		<!-- /.col-lg-12 -->
+    <!-- Left Panel -->
 
-                       </form>
-                        </div>
-                        <!-- /.panel-body -->
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        
                     </div>
-                    <!-- /.panel -->
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.col-lg-8 -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <div class="content">
+            <div class="animated fadeIn">
 
-    <!-- jQuery -->
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+                <div class="row">
+                    <div class="col-lg-6">
+                    </div><!--/.col-->
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/static/vendor/metisMenu/metisMenu.min.js"></script>
+                    <div class="col-lg-6">
+                    </div>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="/static/vendor/raphael/raphael.min.js"></script>
-    <script src="/static/vendor/morrisjs/morris.min.js"></script>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body card-block">
+                                <img src="/static/images/register_background.png">
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/static/dist/js/sb-admin-2.js"></script>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>User Registeration</strong>
+                            </div>
+                            <div class="card-body card-block">
+                                <form  method="POST" class="post-form form-horizontal">{% csrf_token %}
+                                    <div>Name</div>
+                                    <div class="row form-group">
+                                        <!-- <div class="col col-md-3"><label for="hf-email" class=" form-control-label">Email</label></div> -->
+                                        <div class="col-12 col-md-9"><input type="text" id="user" name="name" class="form-control">
+                                            <!-- <span class="help-block">Please enter your email</span> -->
+                                        </div>
+                                    </div>
+                                    <div>Device MAC</div>
+                                    <div class="row form-group">
+                                        <!-- <div class="col col-md-3"><label for="hf-password" class=" form-control-label">Password</label></div> -->
+                                        <div class="col-12 col-md-9"><input type="text" id="MAC" name="macAddr" class="form-control">
+                                            <span class="small">Device MAC Address can't be duplicated</span>
+                                        </div>
+                                    </div>
+                                    <div>Device Information</div>
+                                    <div class="row form-group">
+                                        <!-- <div class="col col-md-3"><label for="hf-password" class=" form-control-label">Password</label></div> -->
+                                        <div class="col-12 col-md-9"><input type="text" id="devName" name="hardwareName" class="form-control">
+                                            <span class="small">The Device information can be entered freely</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions form-group">
+                                        <button type="submit" class="btn btn-primary btn-sm">Resister</button>
+                                    </div>
+                                </form>
 
-    <!-- clock js -->
-    <script src="/static/js/time.js"></script>
+                            </div>
+                        </div>
+                        <div class="card">
+                    </div>
+                    <div class="card">
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-6">
+                </div>
+            </div>
+
+
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+    <div class="clearfix"></div>
+
+    <footer class="site-footer">
+        <div class="footer-inner bg-white">
+            <div class="row">
+                <div class="col-sm-6">
+                    Copyright &copy; 2018 Ela Admin
+                </div>
+                <div class="col-sm-6 text-right">
+                    Designed by <a href="https://colorlib.com">Colorlib</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
 
 </body>
-
 </html>

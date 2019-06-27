@@ -102,29 +102,34 @@
                             <div class="col-lg-6">
                               <input class="form-control" id="user" name="name" type="text" placeholder="유명성">
                             </div>
-                            <!-- /.col-sm-6 -->
-                          </div>
-                          <!-- /.form-group -->
-                          <div class="form-group">
-                            <label class="col-lg-3 control-label" for="MAC">Device MAC</label>
-                            <div class="col-lg-6">
-                              <div class="input-group">
-                                <input class="form-control" id="MAC" name="macAddr" type="text" placeholder="00:00:00:00:00:00">
-                                <span class="input-group-btn">
-                                  <button type="submit" class="btn btn-success">중복확인 <i class="fa fa-check"></i></button>
-                                </span>
-                              </div>
-                              <!-- /.input-group -->
-                              <p class="help-block">Device MAC Address can't be duplicated</p>
-                            </div>
-                            <!-- /.col-sm-6 -->
-                          </div>
-                          <!-- /.form-group -->
-                          <div class="form-group">
-                            <label class="col-lg-3 control-label" for="devName">Device Name</label>
-                            <div class="col-lg-6">
-                              <input class="form-control" id="devName" name="hardwareName" type="text" placeholder="유명성의 아이폰XS">
-                              <p class="help-block">The device name can be entered freely</p>
+                            <div class="card-body card-block">
+                                <form  method="POST" class="post-form form-horizontal">{% csrf_token %}
+                                    <div>Name</div>
+                                    <div class="row form-group">
+                                        <!-- <div class="col col-md-3"><label for="hf-email" class=" form-control-label">Email</label></div> -->
+                                        <div class="col-12 col-md-9"><input type="text" id="user" name="name" class="form-control">
+                                            <!-- <span class="help-block">Please enter your email</span> -->
+                                        </div>
+                                    </div>
+                                    <div>Device MAC</div>
+                                    <div class="row form-group">
+                                        <!-- <div class="col col-md-3"><label for="hf-password" class=" form-control-label">Password</label></div> -->
+                                        <div class="col-12 col-md-9"><input type="text" id="MAC" name="macAddr" class="form-control">
+                                            <span class="small" id='result'>Device MAC Address can't be duplicated</span>
+                                        </div>
+                                    </div>
+                                    <div>Device Information</div>
+                                    <div class="row form-group">
+                                        <!-- <div class="col col-md-3"><label for="hf-password" class=" form-control-label">Password</label></div> -->
+                                        <div class="col-12 col-md-9"><input type="text" id="devName" name="hardwareName" class="form-control">
+                                            <span class="small">The Device information can be entered freely</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions form-group">
+                                        <button type="submit" class="btn btn-primary btn-sm">Resister</button>
+                                    </div>
+                                </form>
+
                             </div>
                             <!-- /.col-lg-6 -->
                           </div>
@@ -132,7 +137,7 @@
                           <div class="col-lg-12">
                     		<div class="form-group text-center">
                         		<button type="submit" class="btn btn-success">Submit <i class="fa fa-check spaceLeft"></i></button>
-                        		<button type="reset" class="btn btn-warning" onclick="location.href='{% url 'accounts:register'%}'"> Reset <i class="fa fa-times spaceLeft"></i></button>
+                        		<!-- <button type="reset" class="btn btn-warning" onclick="location.href='{% url 'accounts:register'%}'"> Reset <i class="fa fa-times spaceLeft"></i></button> -->
                     		</div>
                     		<!-- /.form-group -->
                   		</div>
@@ -166,12 +171,21 @@
     <script src="/static/vendor/raphael/raphael.min.js"></script>
     <script src="/static/vendor/morrisjs/morris.min.js"></script>
 
+<<<<<<< HEAD
     <!-- Custom Theme JavaScript -->
     <script src="/static/dist/js/sb-admin-2.js"></script>
 
     <!-- clock js -->
     <script src="/static/js/time.js"></script>
 
+=======
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="/static/assets/js/main.js"></script>
+>>>>>>> 92faf6969276b8bb9897ccaad6e2689fabe24e17
 </body>
 
 </html>

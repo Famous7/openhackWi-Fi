@@ -3,21 +3,28 @@ from .models import Users,Device
 from .forms import registerForm
 from django.utils import timezone
 from django.conf import settings    
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
     pass
-
+@csrf_exempt
+def macdup(request):
+    if request.method=='POST':
+        macAddr = request.POST.get('mac', '')
+        hardwareCheck = Device.objects.filter(device_mac=macAddr)
+        if hardwareCheck:
+            j = [{'result': True}]
+            return JsonResponse(j, safe=False)
+        else:
+            j = [{'result': False}]
+            return JsonResponse(j, safe=False)
 def register(request):
     if request.method == 'POST':
         form = registerForm(request.POST)
-        macAddr = request.POST['macAddr']
-        hardwareCheck = Device.objects.filter(device_mac=macAddr)
-        if hardwareCheck:
-            return render(request, 'accounts/registration.html', {
-                'form': form,'duplicated':True
-              })
         if form.is_valid():
             name = request.POST['name']
+            macAddr = request.POST['macAddr']
             hardware = Device()
             user = Users.objects.filter(user_name=name)
             if not user: # init

@@ -11,10 +11,10 @@ def macHour(mac):
                         toString += str(q.sniff_time.year)
                         toString += str(q.sniff_time.month)
                         toString += str(q.sniff_time.day)
-                if toString not in dateList:
-                        dateList.append(toString)
-                        dic[toString] = []
-                        output[toString] = 0
+                        if toString not in dateList:
+                                dateList.append(toString)
+                                dic[toString] = []
+                                output[toString] = 0
                         dic[toString].append(q.sniff_time)
                         toString = ''
 
@@ -27,13 +27,14 @@ def macHour(mac):
                         if v2 - v1 <= 5:
                                 output[date] += 5
                         elif i+2 is not leng:
-                                v2 = dic[date][i+2].hour*60 + dic[date][i+2].minute
-                                if v2 - v1 <= 10:
-                                        output[date] += 10
-                                i+=1
+                           v2 = dic[date][i+2].hour*60 + dic[date][i+2].minute
+                           if v2 - v1 <= 10:
+                                output[date] += 10
+                        i+=1
         return output
 
-def macCalender(mac,s):
+
+def macCalender(mac,pick):
         dic = {}
         output = {}
         dateList = []
@@ -44,10 +45,10 @@ def macCalender(mac,s):
                         toString += str(q.sniff_time.year)
                         toString += str(q.sniff_time.month)
                         toString += str(q.sniff_time.day)
-                if toString not in dateList:
-                        dateList.append(toString)
-                        dic[toString] = []
-                        output[toString] = 0
+                        if toString not in dateList:
+                                dateList.append(toString)
+                                dic[toString] = []
+                                output[toString] = 0
                         dic[toString].append(q.sniff_time)
                         toString = ''
 
@@ -60,9 +61,14 @@ def macCalender(mac,s):
                         if v2 - v1 <= 5:
                                 output[date] += 5
                         elif i+2 is not leng:
-                                v2 = dic[date][i+2].hour*60 + dic[date][i+2].minute
-                                if v2 - v1 <= 10:
-                                        output[date] += 10
-                                i+=1
-        return output  
+                           v2 = dic[date][i+2].hour*60 + dic[date][i+2].minute
+                           if v2 - v1 <= 10:
+                                output[date] += 10
+                        i+=1
+
+        stayTime = output[pick]
+        inTime = dic[pick][0]
+        outTime = dic[pick][len(dic[pick])-1]
+        
+        return stayTime,inTime,outTime  
 

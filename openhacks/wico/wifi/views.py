@@ -7,7 +7,7 @@ import time
 from datetime import datetime
 import json
 from django.http import HttpResponse, JsonResponse
-from .macFunc import macHour
+from .macFunc import *
 from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
@@ -24,13 +24,14 @@ def macList(request):
     return render(request, 'wifi/MAC.html', {
         })
 
-def getDate(reqeust):
+@csrf_exempt
+def getDate(reqeust): #json
         macList =[]
         dateList = []
         if reqeust.method == 'POST':
-                mac = reqeust.POST['macAddr']
-                t1 = reqeust.POST['t1']
-                t2 = reqeust.POST['t2']
+                mac = request.POST.get('macAddr')
+                t1 = request.POST.get('t1')
+                t2 = request.POST.get('t2')
 
                 qs = DeviceList.objects.all()
                 # t1 = 1561593600.0
@@ -44,29 +45,46 @@ def getDate(reqeust):
                 for idx, val in enumerate(macList):
                         if mac in val:
                                 dateList.append(qs[idx].sniff_time) 
-
+                j = [{'dateList': dateList}]
+                return JsonResponse(j, safe=False)
         return render(reqeust, 'wifi/date.html', {
-                'qs': dateList
         })
-
+#json
+@csrf_exempt
 def getMacHour(request):
-        dic = {}
         output = {}
-        dateList = []
-        toString = ''
         if request.method == 'POST':
-                mac = request.POST['macAddr']
+                mac = request.POST.get('macAddr')
                 # mac = 'a8:2b:b9:f0:52:94'
                 output = macHour(mac)
-                                        
+       
+                # return render(request, 'wifi/date.html', {
+                # 'stayTime': output
+                # })
+                j = [{'stayTime': output}]
+                return JsonResponse(j, safe=False)  
         return render(request, 'wifi/date.html', {
-               'qs': output
         })
-# 처음나간 시간, 체류시간, 나간시간
+
+# 처음나간 시간, 체류시간, 나간시간 json
+@csrf_exempt
 def getMacCalender(request):
-        pass
+        if request.method == 'POST':
+                mac = request.POST.get('macAddr')
+                pick = request.POST.get('pick')
+                # mac = 'a8:2b:b9:f0:52:94'
+                # pick = '2019627'
+                stayTime,inTime,outTime  = macCalender(mac,pick)
+                j = [{'stayTime':stayTime,'inTime':inTime,'outTime':outTime}]
+                return JsonResponse(j, safe=False)  
+        #         return render(request, 'wifi/date.html', {
+        #                 'stayTime':stayTime,'inTime':inTime,'outTime':outTime 
+        #         })
+        return render(request, 'wifi/date.html', {
+        })
 
 # deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
+@csrf_exempt
 def index (request):
         timequeryset = DeviceList.objects.all()
         data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]

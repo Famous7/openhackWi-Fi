@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -21,8 +20,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/static/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/cs-skin-elastic.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
@@ -64,23 +63,23 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="./"><img src="/static/images/wico_logo_white.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="{% url 'wifi:index' %}"><img src="{% static 'images/wico_logo_white.png' %}" alt="Logo"></a>
                     
                     <!-- added -->
                     <li class="menu-item-has-children dropdown">
                         <!-- <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a> -->
-                        <a href="{% url 'wifi:index' %}"><img class="img-adjust" src="/static/images/menu_dashboard.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp DASHBOARD </a>
+                        <a href="{% url 'wifi:index' %}"><img class="img-adjust" src=" {% static 'images/menu_dashboard.png' %} "></i>&nbsp&nbsp&nbsp&nbsp&nbsp DASHBOARD </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <!-- original -->
                         <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a> -->
-                        <a href="{% url 'wifi:search' %}"><img class="img-adjust" src="/static/images/menu_search.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
+                        <a href="{% url 'wifi:index' %}"><img class="img-adjust" src="{% static 'images/menu_search.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                            <a href="index.html"><img class="img-adjust" src="/static/images/menu_locate.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
+                            <a href="{% url 'wifi:index' %}"><img class="img-adjust" src="{% static 'images/menu_locate.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                            <a href="{% url 'accounts:register' %}"><img class="img-adjust" src="/static/images/menu_register.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp REGISTER</a>
+                            <a href="{% url 'accounts:register' %}"><img class="img-adjust" src="{% static 'images/menu_register.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp REGISTER</a>
                     </li>
 
                 </ul>
@@ -150,7 +149,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">349</span></div>
+                                            <div class="stat-text"><span class="count" id="time_board"></span></div>
                                             <div class="stat-heading">Time</div>
                                         </div>
                                     </div>
@@ -168,7 +167,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
+                                            <div class="stat-text"><span class="count" id="count_board"></span></div>
                                             <div class="stat-heading">people</div>
                                         </div>
                                     </div>
@@ -186,7 +185,7 @@
                                 <h4 class="box-title">Traffic </h4>
                             </div>
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-12">
                                     <div class="card-body">
                                         <!-- <canvas id="TrafficChart"></canvas>   -->
                                         <div id="traffic-chart" class="traffic-chart"></div>
@@ -195,14 +194,10 @@
                                     <div class="card br-0">
                                             <div class="card-body">
                                                 <div class="chart-container ov-h">
-                                                    <div id="flotPie1" class="float-chart"></div>
+                                              
                                                 </div>
                                             </div>
                                     </div><!-- /.card -->
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="card-body">
-                                    </div> <!-- /.card-body -->
                                 </div>
                             </div> <!-- /.row -->
                             <div class="card-body"></div>
@@ -298,10 +293,10 @@
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2018 Ela Admin
+                        Copyright &copy; 2019 Openhack WICO
                     </div>
                     <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">Colorlib</a>
+                        Designed by <a href="https://notefolio.net/innie">innie</a>
                     </div>
                 </div>
             </div>
@@ -315,7 +310,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="/static/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
@@ -340,6 +335,46 @@
         jQuery(document).ready(function($) {
             "use strict";
 
+            // FETCH DATA (최경식 : ajax 통신)
+            console.log("hello world");
+            $.get( "http://" + window.location.hostname + ":" + window.location.port + "/wifi/devicecount", function(data) {
+                console.log(">>>", data);
+
+                const countText = data[data.length - 1].device_count;
+                $('#count_board').text(countText);
+
+                
+                // Traffic Chart using chartist
+                if ($('#traffic-chart').length) {
+                    var chart = new Chartist.Line('#traffic-chart', {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        series: [
+                        [0, 18000, 35000,  25000,  22000,  0],
+                        [0, 33000, 15000,  20000,  15000,  300]
+                        ]
+                    }, {
+                        low: 0,
+                        showArea: true,
+                        showLine: false,
+                        showPoint: false,
+                        fullWidth: true,
+                        axisX: {
+                            showGrid: true
+                        }
+                    });
+                }
+            }).fail(function(data) {
+                console.log("ERROR : ", data);
+            });
+
+            // 보드에 값 넣기
+            function printTime() {
+                let timeObj = new Date();
+                let timeText = timeObj.getHours() + ":" + timeObj.getMinutes() + ":" + timeObj.getSeconds();
+                $('#time_board').text(timeText);
+            }
+            setInterval(printTime, 1000);
+            
             // Pie chart flotPie1
             var piedata = [
                 { label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},
@@ -369,40 +404,21 @@
                 }
             });
             
-            // Traffic Chart using chartist
-            if ($('#traffic-chart').length) {
-                var chart = new Chartist.Line('#traffic-chart', {
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                  series: [
-                  [0, 18000, 35000,  25000,  22000,  0],
-                  [0, 33000, 15000,  20000,  15000,  300],
-                  [0, 15000, 28000,  15000,  30000,  5000]
-                  ]
-              }, {
-                  low: 0,
-                  showArea: true,
-                  showLine: false,
-                  showPoint: false,
-                  fullWidth: true,
-                  axisX: {
-                    showGrid: true
+            
+
+            chart.on('draw', function(data) {
+                if(data.type === 'line' || data.type === 'area') {
+                    data.element.animate({
+                        d: {
+                            begin: 2000 * data.index,
+                            dur: 2000,
+                            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                            to: data.path.clone().stringify(),
+                            easing: Chartist.Svg.Easing.easeOutQuint
+                        }
+                    });
                 }
             });
-
-                chart.on('draw', function(data) {
-                    if(data.type === 'line' || data.type === 'area') {
-                        data.element.animate({
-                            d: {
-                                begin: 2000 * data.index,
-                                dur: 2000,
-                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                to: data.path.clone().stringify(),
-                                easing: Chartist.Svg.Easing.easeOutQuint
-                            }
-                        });
-                    }
-                });
-            }
             // Traffic Chart using chartist End
             //Traffic chart chart-js
             if ($('#TrafficChart').length) {

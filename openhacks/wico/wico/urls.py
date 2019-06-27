@@ -9,8 +9,7 @@ urlpatterns = [
     path('wifi/', include('wifi.urls', namespace='wifi')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('maclist/', include('wifi.urls', namespace='maclist')),
-    path('devicecount/', include('wifi.urls', namespace= 'deveicecount')),
-
+    path('index/', include('wifi.urls', namespace= 'index')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

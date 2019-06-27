@@ -67,7 +67,13 @@ def getMacCalender(request):
         pass
 
 # deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
-def deviceCount (request):
+def index (request):
         timequeryset = DeviceList.objects.all()
         data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
-        return JsonResponse(data[-1], safe=False)
+        # json_data = json.dumps(data)
+        # print(json_data)
+        # JsonResponse(data[-1],safe = True)
+        print(data[-1])
+        return render(request, 'wifi/index.html', {'data': data[-1]})
+
+        

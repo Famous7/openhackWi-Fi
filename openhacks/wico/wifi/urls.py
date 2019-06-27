@@ -8,6 +8,6 @@ urlpatterns = [
     path('maclist/',views.macList, name='macList'),
     path('date/',views.getDate, name='date'),
     path('machour/',views.getMacHour, name='machour'),
-    path('devicecount/', views.deviceCount, name = 'devicecount'),
+    path('index/', views.index, name = 'haha'),
     path('calender/', views.getMacCalender, name = 'maccalender'),
 ]

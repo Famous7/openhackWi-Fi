@@ -207,38 +207,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 <script src="/static/assets/js/main.js"></script>
-
-<script>
-$(function() {
-$('#MAC').keyup(function (e){
-    var content = $(this).val();
-    if(content.length == 17){
-      $.ajax({
-            url:'/dupMac?mac=' + content,
-            success:function(res){
-                var data = JSON.parse(res);
-
-                if(data[0]['result'] === 'True'){
-                  $('#result').text("This MAC Address is Duplicated!!!")
-                  $('#result').css('color', 'red')
-                }else{
-                  $('#result').text("This MAC Address is available")
-                  $('#result').css('color', 'blue')
-                }
-            },
-            error:function(res){
-              console.log(res)
-            }
-        })
-    }
-});
-$('#MAC').keyup();
-});
-
-
-</script>
-
-
-
 </body>
 </html>

@@ -1,6 +1,31 @@
-$.noConflict();
-
-jQuery(document).ready(function($) {
+$(document).ready(function() {
+	console.log($('#MAC'))
+	$('#MAC').keyup(function (e){
+		
+		var content = $(this).val();
+		if(content.length >= 17){
+			$.ajax({
+				type: "POST", // 데이터를 전송하는 방법을 지정
+				url: "http://localhost:8000/accounts/macdup/", // 통신할 url을 지정
+				data: {'mac': content, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+				success:function(res){
+					console.log(res[0]['result'])
+					if(res[0]['result'] == true){
+						console.log('dddd')
+						$('#result').text("This MAC Address is Duplicated!!!")
+						$('#result').css('color', 'red')
+					}else{
+						console.log('ddddddd')
+					$('#result').text("This MAC Address is available")
+					$('#result').css('color', 'blue')
+					}
+				},
+				error:function(res){
+				console.log(res)
+				}
+			})
+		}
+	});
 
 	"use strict";
 

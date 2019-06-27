@@ -73,7 +73,7 @@
                     <li class="menu-item-has-children dropdown">
                         <!-- original -->
                         <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a> -->
-                        <a href="{% url 'wifi:index' %}"><img class="img-adjust" src="{% static 'images/menu_search.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
+                        <a href="{% url 'wifi:search' %}"><img class="img-adjust" src="{% static 'images/menu_search.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                             <a href="{% url 'wifi:index' %}"><img class="img-adjust" src="{% static 'images/menu_locate.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
@@ -347,10 +347,10 @@
                 // Traffic Chart using chartist
                 if ($('#traffic-chart').length) {
                     var chart = new Chartist.Line('#traffic-chart', {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        labels: ['0시', '1시', '2시', '3시','4시', '5시','6시', '7시', '8시', '9시','10시', '11시','12시', '13시', '14시', '15시','16시', '17시','18시', '19시', '20시', '21시','22시','23시'],
                         series: [
-                        [0, 18000, 35000,  25000,  22000,  0],
-                        [0, 33000, 15000,  20000,  15000,  300]
+                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 967, 1431, 2917, 780, 1654, 3334, 3539, 1591, 1693],
+                            [0, 923, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
                         ]
                     }, {
                         low: 0,

@@ -17,8 +17,8 @@
 
     $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
 				type: 'POST', // 데이터를 전송하는 방법을 지정
-				url: "http://localhost:8000/wifi/maclist/", // 통신할 url을 지정
-				data: {'name': '최준식',},
+				url: "http://localhost:8000/wifi/dayCount/", // 통신할 url을 지정
+				data: {'1': '1',},
         success:function(res){
 					console.log(res[0])
 				},

@@ -12,6 +12,7 @@
 .row .col-lg-12 .card .row {
     margin-right: 0;
     margin-left: 0;
+    width: 95%;
 }
 .row .col-lg-12 .card .row:first-child {
   margin-left: 25px;

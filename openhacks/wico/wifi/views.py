@@ -20,9 +20,10 @@ def search(request):
 def macList(request):
 #     userId = 3
     if request.method == 'POST':
-        userName = request.POST.get('name')
+        userName = request.POST.get('user_name')
         uq = Users.objects.filter(user_name=userName)
         pk = uq[0].pk
+        print(pk)
         qs = Device.objects.filter(user_name=pk)
         data = [{'device_name': q.device_name, 'device_mac': q.device_mac} for q in qs]
         return JsonResponse(data, safe=False)
@@ -38,9 +39,12 @@ def getDate(reqeust): #json
         dateList = []
         if reqeust.method == 'POST':
                 mac = reqeust.POST.get('macAddr')
-                t1 = float(reqeust.POST.get('t1'))
-                t2 = float(reqeust.POST.get('t2'))
-
+                t1 = reqeust.POST.get('t1')
+                t2 = reqeust.POST.get('t2')
+                t1 = datetime.strptime(t1, '%Y-%m-%d').timetuple()
+                t2 = datetime.strptime(t2, '%Y-%m-%d').timetuple()
+                t1 = time.mktime(t1)
+                t2 = time.mktime(t2)
                 qs = DeviceList.objects.all()
                 # t1 = 1561593600.0
                 # t2 = 1561594500.0

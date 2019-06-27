@@ -39,3 +39,5 @@ def register(request):
     return render(request, 'accounts/registration.html', {
           'form': form,
     })
+
+

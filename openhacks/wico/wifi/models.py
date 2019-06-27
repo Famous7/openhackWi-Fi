@@ -12,8 +12,9 @@ class DeviceList(models.Model):
     list_seq = models.AutoField(primary_key=True)
     sniff_time = models.DateTimeField()
     mac_list = models.TextField()
-
+    device_count = models.IntegerField()  
     class Meta:
         db_table = "device_list"
     def __str__(self):
         return str(self.list_seq)
+

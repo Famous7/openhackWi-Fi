@@ -4,7 +4,8 @@ from . import views
 app_name = 'wifi'
 
 urlpatterns = [
-    path('',views.main,name='main'),
+    # path('',views.main,name='main'),
     path('maclist/',views.macList, name='macList'),
+    path('devicecount/', views.deviceCount, name = 'devicecount'),
 
 ]

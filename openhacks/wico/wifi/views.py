@@ -10,6 +10,9 @@ from django.http import HttpResponse, JsonResponse
 from .macFunc import *
 from django.views.decorators.csrf import csrf_exempt
 
+def index(request):
+    return render(request, 'wifi/index.html', {
+        })
 def search(request):
     return render(request, 'wifi/search.html', {
         })

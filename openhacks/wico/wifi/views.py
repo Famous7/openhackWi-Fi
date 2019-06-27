@@ -86,12 +86,13 @@ def getMacCalender(request):
 # deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
 @csrf_exempt
 def index (request):
-        timequeryset = DeviceList.objects.all()
-        data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
-        # json_data = json.dumps(data)
+        queryset = DeviceList.objects.all()
         # print(json_data)
         # JsonResponse(data[-1],safe = True)
-        print(data[-1])
-        return render(request, 'wifi/index.html', {'data': data[-1]})
+        return render(request, 'wifi/index.html')
 
+def deviceCount(request):
+        timequeryset = DeviceList.objects.all()
+        data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
+        return JsonResponse(data, safe = False)
         

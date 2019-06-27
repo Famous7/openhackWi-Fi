@@ -1,0 +1,53 @@
+@media screen and (min-width: 992px) {
+  .content .row .col-lg-12 .card .row .col-lg-8 {
+    flex: none;
+    max-width: 100%;
+  }
+}
+
+/* search area */
+.row .col-lg-12 .card {
+  flex-flow: row nowrap;
+}
+.row .col-lg-12 .card .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row .col-lg-12 .card .row:first-child {
+  margin-left: 25px;
+}
+.row .col-lg-12 .card .row .col-lg-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row .col-lg-12 .card .row .col-lg-3 .card-body {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1.25em 0 1.25em 0;
+}
+.row .col-lg-12 .card .row .col-lg-3 .card-body p {
+  color: #000000;
+}
+.row .col-lg-12 .card .row .col-lg-3 .card-body .form-control {
+  border-right: 0;
+}
+.row .col-lg-12 .card .row .col-lg-3 .card-body .form-control:last-child {
+  border-right: 1px solid #ced4da;
+}
+
+.row .col-lg-12 .card .button-area {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 10px;
+}
+
+.row .col-lg-12 .card .button-area div { //invisible area
+  width: 50px;
+  height: 50px;
+}
+.row .col-lg-12 .card .button-area button {  //search button
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}

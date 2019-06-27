@@ -1,21 +1,10 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from accounts.models import Users,Device
-<<<<<<< HEAD
-from .models import DeviceList 
-from django.utils import timezone
-from django.conf import settings
-import json
-# Seungtae's part
-
-from django.http import HttpResponse, JsonResponse
-
-=======
 from .models import DeviceList
 from django.utils import timezone
 from django.conf import settings    
 import time
 from datetime import datetime
->>>>>>> d3048589bbb18c0ac439bb6300820249fb2d4e17
 def main(request):
     pass
 
@@ -26,14 +15,6 @@ def macList(request):
         qs = Device.objects.filter(user_name=userId)
         return render(request, 'wifi/MAC.html', {
             'qs': qs
-<<<<<<< HEAD
-    })
-
-def deviceCount (request):
-        timequeryset = DeviceList.objects.all()
-        data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
-        return JsonResponse(data[-1], safe=False)
-=======
         })
     return render(request, 'wifi/MAC.html', {
         })
@@ -102,4 +83,8 @@ def getMacHour(request):
                'qs': output
         })
 
->>>>>>> d3048589bbb18c0ac439bb6300820249fb2d4e17
+# deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
+def deviceCount (request):
+        timequeryset = DeviceList.objects.all()
+        data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
+        return JsonResponse(data[-1], safe=False)

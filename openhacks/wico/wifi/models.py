@@ -13,5 +13,7 @@ class DeviceList(models.Model):
     sniff_time = models.DateTimeField()
     mac_list = models.TextField()
 
+    class Meta:
+        db_table = "device_list"
     def __str__(self):
         return self.list_seq

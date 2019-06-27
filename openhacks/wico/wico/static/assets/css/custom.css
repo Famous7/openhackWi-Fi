@@ -12,6 +12,7 @@
 .row .col-lg-12 .card .row {
     margin-right: 0;
     margin-left: 0;
+    width: 95%;
 }
 .row .col-lg-12 .card .row:first-child {
   margin-left: 25px;
@@ -42,11 +43,13 @@
   margin-left: 10px;
 }
 
-.row .col-lg-12 .card .button-area div { //invisible area
+.row .col-lg-12 .card .button-area div { 
+  /* invisible area */
   width: 50px;
   height: 50px;
 }
-.row .col-lg-12 .card .button-area button {  //search button
+.row .col-lg-12 .card .button-area button {  
+  /* search button */
   width: 50px;
   height: 50px;
   margin-right: 20px;

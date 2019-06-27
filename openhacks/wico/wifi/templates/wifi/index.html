@@ -63,20 +63,20 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="{% url 'wifi:haha' %}"><img src="{% static 'images/wico_logo_white.png' %}" alt="Logo"></a>
+                    <a class="navbar-brand" href="{% url 'wifi:index' %}"><img src="{% static 'images/wico_logo_white.png' %}" alt="Logo"></a>
                     
                     <!-- added -->
                     <li class="menu-item-has-children dropdown">
                         <!-- <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a> -->
-                        <a href="{% url 'wifi:haha' %}"><img class="img-adjust" src=" {% static 'images/menu_dashboard.png' %} "></i>&nbsp&nbsp&nbsp&nbsp&nbsp DASHBOARD </a>
+                        <a href="{% url 'wifi:index' %}"><img class="img-adjust" src=" {% static 'images/menu_dashboard.png' %} "></i>&nbsp&nbsp&nbsp&nbsp&nbsp DASHBOARD </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <!-- original -->
                         <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a> -->
-                        <a href="{% url 'wifi:haha' %}"><img class="img-adjust" src="{% static 'images/menu_search.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
+                        <a href="{% url 'wifi:search' %}"><img class="img-adjust" src="{% static 'images/menu_search.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                            <a href="{% url 'wifi:haha' %}"><img class="img-adjust" src="{% static 'images/menu_locate.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
+                            <a href="{% url 'wifi:index' %}"><img class="img-adjust" src="{% static 'images/menu_locate.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                             <a href="{% url 'accounts:register' %}"><img class="img-adjust" src="{% static 'images/menu_register.png' %}"></i>&nbsp&nbsp&nbsp&nbsp&nbsp REGISTER</a>
@@ -324,11 +324,11 @@
     <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
-    <script src="assets/js/init/weather-init.js"></script>
+    <script src="/static/assets/js/init/weather-init.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-    <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script src="/static/assets/js/init/fullcalendar-init.js"></script>
 
     <!--Local Stuff-->
     <script>
@@ -337,7 +337,7 @@
 
             // FETCH DATA (최경식 : ajax 통신)
             console.log("hello world");
-            $.get( "http://" + window.location.hostname + ":" + window.location.port + "/devicecount/devicecount", function(data) {
+            $.get( "http://" + window.location.hostname + ":" + window.location.port + "/wifi/devicecount", function(data) {
                 console.log(">>>", data);
 
                 const countText = data[data.length - 1].device_count;
@@ -347,10 +347,10 @@
                 // Traffic Chart using chartist
                 if ($('#traffic-chart').length) {
                     var chart = new Chartist.Line('#traffic-chart', {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        labels: ['0시', '1시', '2시', '3시','4시', '5시','6시', '7시', '8시', '9시','10시', '11시','12시', '13시', '14시', '15시','16시', '17시','18시', '19시', '20시', '21시','22시','23시'],
                         series: [
-                        [0, 18000, 35000,  25000,  22000,  0],
-                        [0, 33000, 15000,  20000,  15000,  300]
+                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 967, 1431, 2917, 780, 1654, 3334, 3539, 1591, 1693],
+                            [0, 923, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
                         ]
                     }, {
                         low: 0,

@@ -1,31 +1,5 @@
-$(document).ready(function() {
-	console.log($('#MAC'))
-	$('#MAC').keyup(function (e){
-		
-		var content = $(this).val();
-		if(content.length >= 17){
-			$.ajax({
-				type: "POST", // 데이터를 전송하는 방법을 지정
-				url: "http://localhost:8000/accounts/macdup/", // 통신할 url을 지정
-				data: {'mac': content, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
-				success:function(res){
-					console.log(res[0]['result'])
-					if(res[0]['result'] == true){
-						console.log('dddd')
-						$('#result').text("This MAC Address is Duplicated!!!")
-						$('#result').css('color', 'red')
-					}else{
-						console.log('ddddddd')
-					$('#result').text("This MAC Address is available")
-					$('#result').css('color', 'blue')
-					}
-				},
-				error:function(res){
-				console.log(res)
-				}
-			})
-		}
-	});
+
+jQuery(document).ready(function($) {
 
 	"use strict";
 
@@ -34,9 +8,85 @@ $(document).ready(function() {
 	});
 
 	jQuery('.selectpicker').selectpicker;
-
-
 	
+	function selectMac(em){
+		const macAddress = em.text();
+		
+		$('#MAC').val(macAddress);
+		$('#dropDownMac').empty()
+		$('#dropDownMac').hide()
+	}
+
+	$('#submitBtn').click(function(){
+		$.ajax({
+			url: 'http://localhost:8000/wifi/date/',
+			data: {
+				't1': $('#form_date1').val(),
+				't2': $('#form_date2').val(),
+				'macAddr': $('#MAC').val()
+			},
+			type: 'POST',
+			success: function (res) {
+				console.log(res)
+			},
+			error: function (error) {
+					console.log(error);
+			}
+	});
+	})
+
+	$('#checkMac').click(function(){
+		$.ajax({
+				url: 'http://localhost:8000/wifi/maclist/',
+				data: {
+					'user_name': $('#user_name').val()
+				},
+				type: 'POST',
+				success: function (res) {
+					$('#dropDownMac').empty()
+					for(var i=0; i<res.length; i++) {
+						
+						const dropdownItemElement = $(document.createElement('a'));
+						dropdownItemElement.click(() => {
+							selectMac(dropdownItemElement);
+						});
+						dropdownItemElement.addClass("dropdown-item");
+						dropdownItemElement.text(res[i]['device_mac']);
+						
+						$('#dropDownMac').append(dropdownItemElement);
+					}
+					$('#dropDownMac').show()
+				},
+				error: function (error) {
+						console.log(error);
+				}
+		});
+	})
+
+
+
+	$('#form_date1').datetimepicker({
+	  language:  'ko',
+	  weekStart: 1,
+	  todayBtn:  1,
+	  autoclose: 1,
+	  todayHighlight: 1,
+	  startView: 2,
+	  minView: 2,
+	  forceParse: 0
+	});
+
+	$('#form_date2').datetimepicker({
+	  language:  'ko',
+	  weekStart: 1,
+	  todayBtn:  1,
+	  autoclose: 1,
+	  todayHighlight: 1,
+	  startView: 2,
+	  minView: 2,
+	  forceParse: 0
+	});
+
 
 	$('.search-trigger').on('click', function(event) {
 		event.preventDefault();
@@ -72,44 +122,44 @@ $(document).ready(function() {
 	});
 
 
-	 
-	 
+
+
 	// Menu Trigger
 	$('#menuToggle').on('click', function(event) {
-		var windowWidth = $(window).width();   		 
-		if (windowWidth<1010) { 
-			$('body').removeClass('open'); 
-			if (windowWidth<760){ 
-				$('#left-panel').slideToggle(); 
+		var windowWidth = $(window).width();
+		if (windowWidth<1010) {
+			$('body').removeClass('open');
+			if (windowWidth<760){
+				$('#left-panel').slideToggle();
 			} else {
-				$('#left-panel').toggleClass('open-menu');  
-			} 
+				$('#left-panel').toggleClass('open-menu');
+			}
 		} else {
 			$('body').toggleClass('open');
-			$('#left-panel').removeClass('open-menu');  
-		} 
-			 
-	}); 
+			$('#left-panel').removeClass('open-menu');
+		}
 
-	 
+	});
+
+
 	$(".menu-item-has-children.dropdown").each(function() {
 		$(this).on('click', function() {
 			var $temp_text = $(this).children('.dropdown-toggle').html();
-			$(this).children('.sub-menu').prepend('<li class="subtitle">' + $temp_text + '</li>'); 
+			$(this).children('.sub-menu').prepend('<li class="subtitle">' + $temp_text + '</li>');
 		});
 	});
 
 
-	// Load Resize 
-	$(window).on("load resize", function(event) { 
-		var windowWidth = $(window).width();  		 
+	// Load Resize
+	$(window).on("load resize", function(event) {
+		var windowWidth = $(window).width();
 		if (windowWidth<1010) {
-			$('body').addClass('small-device'); 
+			$('body').addClass('small-device');
 		} else {
-			$('body').removeClass('small-device');  
-		} 
-		
+			$('body').removeClass('small-device');
+		}
+
 	});
-  
- 
+
+
 });

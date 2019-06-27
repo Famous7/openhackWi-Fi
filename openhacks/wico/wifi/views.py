@@ -10,14 +10,23 @@ from django.http import HttpResponse, JsonResponse
 from .macFunc import *
 from django.views.decorators.csrf import csrf_exempt
 
-def main(request):
-    pass
+def index(request):
+    return render(request, 'wifi/index.html', {
+        })
+def search(request):
+    return render(request, 'wifi/search.html', {
+        })
 @csrf_exempt
 def macList(request):
 #     userId = 3
     if request.method == 'POST':
-        userId = request.POST['pk']
-        qs = Device.objects.filter(user_name=userId)
+        userName = request.POST.get('user_name')
+        uq = Users.objects.filter(user_name=userName)
+        pk = uq[0].pk
+        print(pk)
+        qs = Device.objects.filter(user_name=pk)
+        data = [{'device_name': q.device_name, 'device_mac': q.device_mac} for q in qs]
+        return JsonResponse(data, safe=False)
         return render(request, 'wifi/MAC.html', {
             'qs': qs
         })
@@ -29,10 +38,13 @@ def getDate(reqeust): #json
         macList =[]
         dateList = []
         if reqeust.method == 'POST':
-                mac = request.POST.get('macAddr')
-                t1 = request.POST.get('t1')
-                t2 = request.POST.get('t2')
-
+                mac = reqeust.POST.get('macAddr')
+                t1 = reqeust.POST.get('t1')
+                t2 = reqeust.POST.get('t2')
+                t1 = datetime.strptime(t1, '%Y-%m-%d').timetuple()
+                t2 = datetime.strptime(t2, '%Y-%m-%d').timetuple()
+                t1 = time.mktime(t1)
+                t2 = time.mktime(t2)
                 qs = DeviceList.objects.all()
                 # t1 = 1561593600.0
                 # t2 = 1561594500.0
@@ -85,14 +97,24 @@ def getMacCalender(request):
 
 # deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
 @csrf_exempt
-def index (request):
-        queryset = DeviceList.objects.all()
-        # print(json_data)
-        # JsonResponse(data[-1],safe = True)
-        return render(request, 'wifi/index.html')
-
 def deviceCount(request):
         timequeryset = DeviceList.objects.all()
         data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
         return JsonResponse(data, safe = False)
+@csrf_exempt
+def twoDayCount (request):
+        day1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        day2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         
+        if request.method == 'POST':
+                qs = DeviceList.objects.all().order_by('sniff_time')
+                i = qs[0].sniff_time.day
+                for q in qs:
+                        t = q.sniff_time.hour
+                        if q.sniff_time.day is i:
+                                day1[t] = q.device_count
+                        else:
+                                day2[t] = q.device_count
+                        
+                j = [{'day1':day1,'day2':day2}]
+                return JsonResponse(j, safe=False)  

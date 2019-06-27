@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,14 +80,13 @@ WSGI_APPLICATION = 'wico.wsgi.application'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'openhack', # DB명
-        'USER': 'openhack', # 데이터베이스 계정
-        'PASSWORD': 'wifi', # 계정 비밀번호
-        'HOST': '10.10.4.102', # 데이테베이스 주소(IP)
-        # 'PORT': '', # 데이터베이스 포트(보통은 3306)
+        'NAME': 'openhack',
+        'USER': 'openhack',
+        'PASSWORD': 'wifi',
+        'HOST': '10.10.4.102',
         'OPTIONS': {
          "init_command": "SET foreign_key_checks = 0;",
-    },
+         },
     }
 }
 

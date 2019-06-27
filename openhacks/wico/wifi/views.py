@@ -37,6 +37,8 @@ def macList(request):
 def getDate(reqeust): #json
         macList =[]
         dateList = []
+        toString = ''
+        dic = {}
         if reqeust.method == 'POST':
                 mac = reqeust.POST.get('macAddr')
                 t1 = reqeust.POST.get('t1')
@@ -56,8 +58,16 @@ def getDate(reqeust): #json
                                 macList.append(val.mac_list.split(","))
                 for idx, val in enumerate(macList):
                         if mac in val:
-                                dateList.append(qs[idx].sniff_time) 
-                j = [{'dateList': dateList}]
+                                dateList.append(qs[idx].sniff_time)
+                for date in dateList:
+                        pick = ''
+                        pick += str(date.year)
+                        pick += str(date.month)
+                        pick += str(date.day)
+                        stayTime,inTime,outTime  = macCalender(mac,pick)
+                        dic[str(date)]=stayTime
+ 
+                j = [{'dateList': dic}]
                 return JsonResponse(j, safe=False)
         return render(reqeust, 'wifi/date.html', {
         })
@@ -115,6 +125,6 @@ def twoDayCount (request):
                                 day1[t] = q.device_count
                         else:
                                 day2[t] = q.device_count
-                        
+                print(day1,day2)
                 j = [{'day1':day1,'day2':day2}]
                 return JsonResponse(j, safe=False)  

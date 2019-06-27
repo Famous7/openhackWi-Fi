@@ -8,10 +8,11 @@ from datetime import datetime
 import json
 from django.http import HttpResponse, JsonResponse
 from .macFunc import macHour
+from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
     pass
-
+@csrf_exempt
 def macList(request):
 #     userId = 3
     if request.method == 'POST':
@@ -61,6 +62,9 @@ def getMacHour(request):
         return render(request, 'wifi/date.html', {
                'qs': output
         })
+# 처음나간 시간, 체류시간, 나간시간
+def getMacCalender(request):
+        pass
 
 # deviceCount는 가장 최근에 통신한 와이파이 내용 및 와이파이에 연결된 스마트폰 수를 표시함
 def deviceCount (request):

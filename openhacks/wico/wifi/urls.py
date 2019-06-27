@@ -9,4 +9,5 @@ urlpatterns = [
     path('date/',views.getDate, name='date'),
     path('machour/',views.getMacHour, name='machour'),
     path('devicecount/', views.deviceCount, name = 'devicecount'),
+    path('calender/', views.getMacCalender, name = 'maccalender'),
 ]

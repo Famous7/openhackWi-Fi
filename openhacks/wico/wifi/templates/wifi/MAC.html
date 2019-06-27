@@ -133,7 +133,7 @@
     	opener.document.getElementById("device").value = MAC;
     	window.close();
     }
-
+  
     $("#MACTable tr").click(function(){
         var td = $(this).children();
         $("#MACTable").find("tr").css("background-color", "white");
@@ -142,6 +142,7 @@
         MAC = td.eq(3).text();
         //$("#device").val(td.eq(1).text());
       });
+      
     </script>
 
 

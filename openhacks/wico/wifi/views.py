@@ -34,15 +34,15 @@ def macList(request):
         })
 
 @csrf_exempt
-def getDate(reqeust): #json
+def getDate(request): #json
         macList =[]
         dateList = []
         toString = ''
         dic = {}
         if reqeust.method == 'POST':
-                mac = reqeust.POST.get('macAddr')
-                t1 = reqeust.POST.get('t1')
-                t2 = reqeust.POST.get('t2')
+                mac = request.POST.get('macAddr')
+                t1 = request.POST.get('t1')
+                t2 = request.POST.get('t2')
                 t1 = datetime.strptime(t1, '%Y-%m-%d').timetuple()
                 t2 = datetime.strptime(t2, '%Y-%m-%d').timetuple()
                 t1 = time.mktime(t1)

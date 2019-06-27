@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import UserModel,HardwareModel
+from .models import Users,Device
 
 class registerForm(forms.Form):
     name = forms.CharField(max_length=20)

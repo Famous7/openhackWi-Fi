@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<!-- Bootstrap Core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/static/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="/static/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/static/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static//dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/static/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>DeviceList</title>
+</head>
+<body>
+	<div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+              <div class="col-lg-12">
+                <h2 class="page-header">Device List</h2>
+                <p class="help-block">select device MAC</p>
+              </div>
+              <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <i class="fa fa-table fa-fw"></i>유명성's Device List
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                  <div class="table-responsive">
+                    <table width="100%" class="table table-bordered table-hover" id="MACTable">
+                      <thead>
+                        <tr>
+                          <th>Device Name</th>
+                          <th>MAC Address</th>
+                        </tr>
+                      </thead>
+                      {% if qs %}
+                      <tbody>
+                        {% for device in qs %}
+                        <tr>
+                        	<td>{{device.device_name}}</td>
+                        	<td>{{device.device_mac}}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                      {% endif %}
+                    </table>
+                    <!-- /.table -->
+                  </div>
+                  <!-- /.table-responsive -->
+                  <button type="button" class="btn btn-default" onclick="passMAC()">Submit</button>
+                  <button type="button" class="btn btn-default" onclick="window.close()">Close</button>
+                </div>
+                <!-- /.panel-body -->
+              </div>
+              <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+
+ <!-- jQuery -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/static/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/static/vendor/raphael/raphael.min.js"></script>
+    <script src="/static/vendor/morrisjs/morris.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static//dist/js/sb-admin-2.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="/static/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/static/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="/static/vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+ 	//backup variable
+    var MAC;
+
+    //MACTable setup
+    $(document).ready(function() {
+        $('#MACTable').DataTable({
+            responsive: true,
+            "paging": false,
+            "searching": false,
+            "info": false,
+            "ordering": false
+        });
+    });
+
+
+    function passMAC(){
+    	opener.document.getElementById("device").value = MAC;
+    	window.close();
+    }
+
+    $("#MACTable tr").click(function(){
+        var td = $(this).children();
+        $("#MACTable").find("tr").css("background-color", "white");
+        $(this).css("background-color", "#81BEF7");
+        //opener.document.getElementById("device").value = td.eq(3).text();
+        MAC = td.eq(3).text();
+        //$("#device").val(td.eq(1).text());
+      });
+    </script>
+
+
+</body>
+</html>

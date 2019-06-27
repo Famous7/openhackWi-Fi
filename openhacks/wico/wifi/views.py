@@ -20,8 +20,12 @@ def search(request):
 def macList(request):
 #     userId = 3
     if request.method == 'POST':
-        userId = request.POST.get('pk')
-        qs = Device.objects.filter(user_name=userId)
+        userName = request.POST.get('name')
+        uq = Users.objects.filter(user_name=userName)
+        pk = uq[0].pk
+        qs = Device.objects.filter(user_name=pk)
+        data = [{'device_name': q.device_name, 'device_mac': q.device_mac} for q in qs]
+        return JsonResponse(data, safe=False)
         return render(request, 'wifi/MAC.html', {
             'qs': qs
         })
@@ -94,3 +98,20 @@ def deviceCount (request):
                 timequeryset = DeviceList.objects.all()
                 data = [{'sniff_time': md.sniff_time, 'device_count': md.device_count} for md in timequeryset]
                 return JsonResponse(data[-1], safe=False)
+@csrf_exempt
+def twoDayCount (request):
+        day1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        day2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        
+        if request.method == 'POST':
+                qs = DeviceList.objects.all().order_by('sniff_time')
+                i = qs[0].sniff_time.day
+                for q in qs:
+                        t = q.sniff_time.hour
+                        if q.sniff_time.day is i:
+                                day1[t] = q.device_count
+                        else:
+                                day2[t] = q.device_count
+                        
+                j = [{'day1':day1,'day2':day2}]
+                return JsonResponse(j, safe=False)  

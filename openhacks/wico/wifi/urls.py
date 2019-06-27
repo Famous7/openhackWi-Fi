@@ -12,4 +12,5 @@ urlpatterns = [
     path('machour/',views.getMacHour, name='machour'),
     path('devicecount/', views.deviceCount, name = 'devicecount'),
     path('calender/', views.getMacCalender, name = 'maccalender'),
+    path('dayCount/',views.twoDayCount,name='twoDayCount'),
 ]

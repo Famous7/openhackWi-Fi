@@ -17,10 +17,10 @@
 
     $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
 				type: 'POST', // 데이터를 전송하는 방법을 지정
-				url: "http://localhost:8000/wifi/calender/", // 통신할 url을 지정
-				data: {'pick':'2019627','macAddr':'a8:2b:b9:f0:52:94',},
+				url: "http://localhost:8000/wifi/maclist/", // 통신할 url을 지정
+				data: {'name': '최준식',},
         success:function(res){
-					console.log(res)
+					console.log(res[0])
 				},
          // 서버측에서 전송한 데이터를 어떤 형식의 데이터로서 해석할 것인가를 지정, 없으면 알아서 판단
         // 서버측에서 전송한 Response 데이터 형식 (json)

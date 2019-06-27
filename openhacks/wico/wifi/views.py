@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
     pass
-@csrf_exempt
+
 def macList(request):
 #     userId = 3
     if request.method == 'POST':
@@ -61,7 +61,7 @@ def getMacHour(request):
                 })
         return render(request, 'wifi/date.html', {
         })
-        
+
 # 처음나간 시간, 체류시간, 나간시간
 def getMacCalender(request):
         if request.method == 'POST':

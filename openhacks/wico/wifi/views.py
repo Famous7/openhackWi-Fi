@@ -10,8 +10,9 @@ from django.http import HttpResponse, JsonResponse
 from .macFunc import *
 from django.views.decorators.csrf import csrf_exempt
 
-def main(request):
-    pass
+def search(request):
+    return render(request, 'wifi/search.html', {
+        })
 @csrf_exempt
 def macList(request):
 #     userId = 3

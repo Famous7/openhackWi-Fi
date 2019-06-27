@@ -84,10 +84,18 @@ DATABASES = {
     },
      'external': {
         'ENGINE': 'django.db.backends.mysql',
+<<<<<<< HEAD
         'NAME': 'openhack',
         'USER': 'openhack',
         'PASSWORD': 'wifi',
         'HOST': '10.10.4.102',
+=======
+        'NAME': 'openhack', # DB명
+        'USER': 'openhack', # 데이터베이스 계정
+        'PASSWORD': 'wifi', # 계정 비밀번호
+        'HOST': '10.10.4.102', # 데이테베이스 주소(IP)
+        # 'PORT': '', # 데이터베이스 포트(보통은 3306)
+>>>>>>> bed373ba5105adecd1448eee41e2f76ccf25018e
     }
 }
 

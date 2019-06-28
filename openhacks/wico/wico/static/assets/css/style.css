@@ -20,6 +20,33 @@ Googel Fonts  */
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 
+/* 오시면 말하기 */
+.calendar-size {
+  height: 100px;
+}
+
+.max-small {
+  width: auto; height: auto;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.color-blue {
+  color: #418cff !important;
+  border-color: #418cff;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
 /* added 크기랑 색 재조정하기 */
 .small {
   font-size: 2.0;
@@ -1224,8 +1251,7 @@ header .form-inline {
   border-radius: 5px;
   padding: 0;
   border: 0px solid transparent;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); }
+   }
   .card .box-title {
     font-weight: 600;
     font-size: 1em;
@@ -1414,12 +1440,14 @@ header .form-inline {
 .traffic-chart .ct-series-a .ct-area,
 .traffic-chart .ct-series-a .ct-slice-donut-solid,
 .traffic-chart .ct-series-a .ct-slice-pie {
-  fill: #66bb6a; }
+  fill: #00e7ff;
+  opacity: 0.5; }
 
 .traffic-chart .ct-series-b .ct-area,
 .traffic-chart .ct-series-b .ct-slice-donut-solid,
 .traffic-chart .ct-series-b .ct-slice-pie {
-  fill: #ef5350; }
+  fill: #ff348b;
+  opacity: .9; }
 
 .traffic-chart .ct-series-c .ct-area,
 .traffic-chart .ct-series-c .ct-slice-donut-solid,

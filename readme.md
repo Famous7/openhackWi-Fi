@@ -1,33 +1,32 @@
-# SW중심대학 오픈소스 해커톤
+# SW중심대학 오픈소스 해커톤 
 
 ![image](https://user-images.githubusercontent.com/40455392/60289693-0282b800-9952-11e9-911f-dcbd5427250a.png)
 
-​                                                         **3박 4일 개발자 & 디자이너들의 죽음의 Race!**
+​                                                         **3박 4일 개발자 & 디자이너들의 죽음의 Race Start!**
 
 - **Openhack** 일자 : 2019.06.26 ~ 2019.06.29
 - `장소` : 전북 익산 웨스턴라이프 호텔
 - `주최` : 과학기술정보통신부, 정보통신기획평가원
 - `주관` : 소프트웨어중심대학 협의회 / 정보과학회 오픈소스연구회
-
-
+- `Markdown 작성자`: RyanKor(Github Name) / 김승태 (Openhack 4기 참여자)
 
 ## TEAM WICO - 머신러닝을 활용한 Wi-Fi 범위 내 접속한 사용자 인원 추산 
 
-![image](https://user-images.githubusercontent.com/40455392/60289645-e0893580-9951-11e9-871b-165121606188.png)
+![image](https://user-images.githubusercontent.com/40455392/60310430-dab14580-998d-11e9-8901-261d2fdec043.png)
 
-​                                                                                [Image 1. WICO Logo]
-
-
-
-
-
-![1561661666870](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561661666870.png)
+​                                                                            [Image 1. WICO Logo]
 
 
 
 
 
-​                                                                [Image 2. Team WICO 마스코트 위코]
+![image](https://user-images.githubusercontent.com/40455392/60310507-2e239380-998e-11e9-893b-9e7d978a54f4.png)
+
+
+
+
+
+​                                                       [Image 2. Logo Design & Color Setting]
 
 
 
@@ -37,11 +36,14 @@
 
 ### Team Members
 
-- 유명성(스마트 팀장): 충북대학교, **`머신러닝 및 네트워크 통신` 담당**
-- 강지인(일 잘하는 디자이너): 건국대학교 `UX&UI` **짱짱 디자이너** 
-- 김승태(MD 좋아하는 개발자) : 고려대학교, **Back-End**, `Django` 사용, Markdown 멋진 작성자 본인
-- 한준모(잠 못드는 개발자): 한동대학교, **Front-End**, `Bootstrap & JS` 사용
-- 최준식(피곤한 개발자): 숭실대학교, **Back-End**, `Django` 사용
+| <img src="https://user-images.githubusercontent.com/40455392/60309905-28787e80-998b-11e9-8f40-2583f7a662ef.jpg" width="50%" height="30%"> | 김승태(MD 좋아하는 개발자)<br />백엔드, Django 개발자. Markdown 이 멋진 작성자 본인 입니다. 고려대학교 영어영문학과 재학 중이고 곧 졸업합니다. 오픈소스 해커톤으로 中國 가고 싶어요오오오오~~~ 취미는 문서 작성 해보리기 ~~ |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/40455392/60310247-ecdeb400-998c-11e9-8deb-3fac9bda4168.png" width="50%" height="30%"> | **강지인(일 잘하는 디자이너) <br /> 일러스트레이터, 포토샵, 영상 편집 등 디자인 방면에서 못하는 것이 없는 디자이너 유망주. 건국대학교 재학중이며 UX & UI 가릴 것 없이 우수함. 저희 우승하면 중국 보내주나요?** |
+|                                                              | **유명성(스마트 팀장)<br /> 충북대학교, `머신러닝 및 네트워크 통신` 담당**. **와이파이 네트워크 설계 및 머신러닝을 통한 Wi-Fi 접속자 인원 추산 알고리즘 디자인을 담당했다.** |
+|                                                              | **한준모(잠 못드는 개발자)<br /> 한동대학교, Front-End, `Bootstrap & JS` 사용**. **디자인 감성이 풍부하고 프론트 개발자로서 역할을 수행하는 개발 꿈나무. 강지인 팀원과 뛰어난 프론트 역량을 발휘했다** |
+|                                                              | **최준식(피곤한 개발자)<br /> 숭실대학교, Back-End, `Django` 사용**. **명실상부 백엔드에서 큰 역량을 보인 팀원. 복잡해보이는 코드 작성도 해결하며 짧은 해커톤 기간 동안 잠을 많이 못자고 유독 걱정이 많았던 팀원이다. ** |
+
+
 
 
 
@@ -51,9 +53,9 @@
 
 ### Required Stacks
 
-|                           Python3                            |                         Django 2.2.0                         |                          Javascript                          |                            MySQL                             |                            jQuery                            |
+|                           Python3                            |                            Django                            |                          Javascript                          |                            MySQL                             |                            jQuery                            |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![íì´ì¬ì ëí ì´ë¯¸ì§ ê²ìê²°ê³¼](http://hansworld.co.kr/files/attach/images/849/859/5ae0975bf70b5c1a201efa90679be5c6.png) | ![djangoì ëí ì´ë¯¸ì§ ê²ìê²°ê³¼](https://cdn-images-1.medium.com/max/1200/1*1OBwwxzJksMv0YDD-XmyBw.png) | ![JSì ëí ì´ë¯¸ì§ ê²ìê²°ê³¼](https://cdn-images-1.medium.com/max/1600/1*HP8l7LMMt7Sh5UoO1T-yLQ.png) | ![mysqlì ëí ì´ë¯¸ì§ ê²ìê²°ê³¼](https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png) | ![jqueryì ëí ì´ë¯¸ì§ ê²ìê²°ê³¼](https://t1.daumcdn.net/cfile/tistory/2541853857EA02BC16) |
+| ![image](https://user-images.githubusercontent.com/40455392/60309480-f1a16900-9988-11e9-8a35-57a31446c708.png){: width="200" height="200"} | ![image](https://user-images.githubusercontent.com/40455392/60309496-0978ed00-9989-11e9-9377-237e24f58832.png){: width="100" height="100"} | ![image](https://user-images.githubusercontent.com/40455392/60309583-7c826380-9989-11e9-982b-b10a79c0cf09.png) | ![image](https://user-images.githubusercontent.com/40455392/60309601-915ef700-9989-11e9-87dc-62b05c49a327.png) | ![image](https://user-images.githubusercontent.com/40455392/60309616-a6d42100-9989-11e9-847a-5dfc2a06b084.png) |
 
 
 
@@ -88,6 +90,7 @@ PyMySQL==0.9.3
 pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2019.1
+scaapy==2.4.2
 scikit-learn==0.21.2
 scipy==1.3.0
 six==1.12.0
@@ -102,15 +105,39 @@ wcwidth==0.1.7
 
 ### 사용 장비
 
-
+- 네트워크 장비 : `Atheros AR9271` (Wi-Fi에 연결된 디바이스 MAC address 수집)
 
 
 
 ## 서비스 소개
 
-![1561661301672](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561661301672.png)
+![1561685854977](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561685854977.png)
 
-​                                                                           [Image 3. Service Main Page]
+​                                                                           [Image 3. 전설의 시작]
+
+
+
+![1561685919242](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561685919242.png)
+
+​         [Image 4. 대규모 군중이 모여 인원 추산이 어려운 콘서트, 행사장, 시위 등에 사용할 수 있는 WICO]
+
+
+
+![1561685783290](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561685783290.png)
+
+​                                                                           [Image 5. WICO Concept]
+
+
+
+![image](https://user-images.githubusercontent.com/40455392/60311021-37156480-9990-11e9-8ebe-520375aa2689.png)
+
+​                                                                           [Image 6. WICO Process]
+
+
+
+![image](https://user-images.githubusercontent.com/40455392/60310489-10562e80-998e-11e9-9926-c582934d8e6c.png)
+
+​                                                                           [Image 7. Service Main Page]
 
 
 
@@ -120,11 +147,27 @@ wcwidth==0.1.7
 
 
 
-![1561661647293](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561661647293.png)
+![image](https://user-images.githubusercontent.com/40455392/60310548-61662280-998e-11e9-9759-39a7af6802e1.png)[Image 8. Search Function. 일정 기간 동안 Wi-Fi에 접속한 사용자의 출입 시간과 Wi-Fi 사용 시간을 측정 가능]
 
-​                                             [Image 4. 일자별 조회를 통한 와이파이 접속자 수 확인 기능]
+​                                                                      
+
+![1561686006229](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561686006229.png)
+
+​                                   [Image 9. 기능 확장성: 실내에 있는 와이파이 사용자의 위치 확인 가능]
+
+
 
 - 특정 일자를 지정해서 지정된 기간 내의 특정 와이파이에 접속한 사용자 수, 최초 접속 시간 / 사용 시간 / 접속이 끊긴 시간을 제공할 수 있습니다.
-- 개인정보 노출 등의 민감한 사항에 부딪힐 수 있는 이슈가 있으나 사용자 정보 제공 동의하에 마케팅, 대형마트 동선 파악 등 무궁한 활용 목적을 갖고 있습니다.
+- 개인정보 노출 등의 민감한 사항에 부딪힐 수 있는 이슈가 있으나 사용자 정보 제공 동의하에 마케팅, 대형마트 동선 파악 등 무궁무진한 활용 목적을 갖고 있습니다.
 - 또한 사용자의 데이터를 시각화해 제공하는 것은 네트워크 통신계의 `Google Analytics`가 될 수 있는 잠재력을 보여줍니다. 누구나 저희 서비스를 사용해볼 수 있는 기회를 가져보세요!
+
+
+
+![image](https://user-images.githubusercontent.com/40455392/60311692-5bbf0b80-9993-11e9-8b3f-f2bc9fb299bb.png)
+
+
+
+- WICO는 사용자의 동의 없이 무작위로 Wi-Fi 내에 사용자의 디바이스 정보를 수집하거나 활용하는 행위를 일체 배제합니다. WICO에 사용자 이름과 기기 정보를 등록한 고객만이 특정 사용자로서 추정할 수 있습니다.
+
+
 

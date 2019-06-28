@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
 
     <!-- changed -->
-    <link rel="shortcut icon" href="/static/images/wico_w_logo.png">
+    <link rel="shortcut icon" href="/static/images/wico_logo_fabicon.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -83,10 +83,10 @@
                         <a href="{% url 'wifi:search' %}"><img class="img-adjust" src="/static/images/menu_search.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp SEARCH</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                            <a href="index.html"><img class="img-adjust" src="/static/images/menu_locate.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
+                            <a href="{% url 'accounts:register' %}"><img class="img-adjust" src="/static/images/menu_register.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp REGISTER</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                            <a href="{% url 'accounts:register' %}"><img class="img-adjust" src="/static/images/menu_register.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp REGISTER</a>
+                            <a href="index.html"><img class="img-adjust" src="/static/images/menu_locate.png"></i>&nbsp&nbsp&nbsp&nbsp&nbsp LOCATE</a>
                     </li>
 
                 </ul>
@@ -109,21 +109,21 @@
                   <div class="col-lg-12">
                     <div class="card">
                       <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 calendar-size">
                           <div class="card-body">
-                            <p>Start Date</p>
+                            <p class="color-blue align-center">Start Date</p>
                             <input type="text" name="sDateTime" class="form-control" id="form_date1" data-date="" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
                           </div>
                         </div>
                         <div class="col-lg-3">
                           <div class="card-body">
-                            <p>End Date</p>
+                            <p class="color-blue align-center">End Date</p>
                             <input type="text" name="eDateTime" class="form-control" id="form_date2" data-date="" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
                           </div>
                         </div>
                         <div class="col-lg-3">
                           <div class="card-body">
-                            <p>User Name</p>
+                            <p class="color-blue">&nbsp&nbsp&nbsp&nbsp User Name</p>
                             <div class="input-group">
                             <input type="text" class="form-control" id="user_name">
                             <div class="input-group-prepend">
@@ -134,7 +134,7 @@
                         </div>
                         <div class="col-lg-3">
                           <div class="card-body">
-                            <p>Device MAC</p>
+                            <p class="color-blue align-center">Device MAC</p>
                             <input id="MAC" type="text" class="form-control">
                             <div class="dropdown-menu" id="dropDownMac">
                               
@@ -142,9 +142,13 @@
                           </div>
                         </div>
                       </div>
-                      <div class="button-area">
+                      {% comment %} <div class="button-area">
                         <div></div>
                         <button id="submitBtn">test</button>
+                        <input type="button" class="img-button">
+                      </div> {% endcomment %}
+                      <div class="button-area" id="submitBtn" style="background-color: #418cff">
+                        <img src="/static/images/menu_search.png" style="width: 30%">
                       </div>
 
                       </div>

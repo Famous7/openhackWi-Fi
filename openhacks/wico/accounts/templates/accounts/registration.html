@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -8,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WICO</title>
+    <title>Ela Admin - HTML5 Admin Template</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,8 +21,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/static/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/cs-skin-elastic.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -38,7 +37,7 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <a class="navbar-brand" href="./"><img src="/static/images/wico_logo_white.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="{% url 'wifi:haha' %}"><img src="{% static 'images/wico_logo_white.png' %}" alt="Logo"></a>
 
                     <!-- added -->
                     <li class="menu-item-has-children dropdown">
@@ -65,11 +64,7 @@
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
-
-        <!-- Header-->
-        
-        <!-- Header-->
+    <div id="right-panel" class="right-panel center-container" style="background-color: #ffffff">
 
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
@@ -92,7 +87,8 @@
 
                     <div class="col-lg-6">
                     </div>
-
+                    
+                    <!-- changed -->
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body card-block">
@@ -129,11 +125,10 @@
                                             <span class="small">The Device information can be entered freely</span>
                                         </div>
                                     </div>
-                                    <div class="form-actions form-group">
-                                        <button type="submit" class="btn btn-primary btn-sm">Resister</button>
-                                    </div>
                                 </form>
-
+                                <div class="form-actions form-group">
+                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Resister</button>
+                                </div>
                             </div>
                         </div>
                         <div class="card">
@@ -141,36 +136,25 @@
                     <div class="card">
                     </div>
                 </div>
-
-                
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
-                </div>
-
-                <div class="col-lg-6">
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document"> 
+                    <div class="modal-content"> 
+                        <div class="modal-header"> 
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button> 
+                            <h4 class="modal-title" id="myModalLabel">Modal 제목</h4> 
+                        </div> 
+                        <div class="modal-body"> Modal 내용 </div> 
+                        <div class="modal-footer"> 
+                            <button type="button" class="btn btn-default button-center" data-dismiss="modal" >닫기</button> 
+                        </div> 
+                    </div> 
                 </div>
             </div>
-
 
         </div><!-- .animated -->
     </div><!-- .content -->
@@ -199,6 +183,8 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-<script src="/static/assets/js/main.js"></script>
+<script src=" {% static 'assets/js/main.js' %}"></script>
+
+
 </body>
 </html>

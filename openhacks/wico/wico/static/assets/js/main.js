@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
 			success: function (res) {
 				console.log(res)
 				if(res['result'] == "true"){
-					$('#result').text('There is!!!')
+					$('#result').text('Founded!')
 					$('#result').css('color', '#418cff')
 
 					$.ajax({
@@ -46,9 +46,17 @@ jQuery(document).ready(function($) {
 							for(var i=0; i<res.length; i++){
 								for(var key in res[i]){
 									if(res[i][key] != 0){
+										var color1;
+										if(res[i][key] > 3){
+											color1 = '#ff5294'
+										}else{
+											color1 = '#23e3ce';
+										}
 										events.push({
 											title: res[i][key],
-											start: key
+											start: key,
+											color: color1,
+											textColor: 'white'
 										})
 									}
 								}
@@ -73,7 +81,7 @@ jQuery(document).ready(function($) {
 
 				}
 				else{
-					$('#result').text('Nop!!')
+					$('#result').text('Not Found!')
 					$('#result').css('color', 'red')
 				}
 

@@ -123,23 +123,30 @@
                         </div>
                         <div class="col-lg-3">
                           <div class="card-body">
-                            <p class="color-blue">&nbsp&nbsp&nbsp&nbsp User Name</p>
+                            <p class="color-blue align-center">User Name</p>
                             <div class="input-group">
                             <input type="text" class="form-control" id="user_name">
                             <div class="input-group-prepend">
                               <div class="input-group-text" id='checkMac'>List</div>
                             </div>
+                            
                           </div>
+                          
                           </div>
                         </div>
                         <div class="col-lg-3">
                           <div class="card-body">
                             <p class="color-blue align-center">Device MAC</p>
-                            <input id="MAC" type="text" class="form-control">
-                            <div class="dropdown-menu" id="dropDownMac">
+                            <div style="display: flex">
+                                <input id="MAC" type="text" class="form-control">
+                                <div class="dropdown-menu" id="dropDownMac">
                               
+                                </div>
+                                <div class="button-area max-small2" id="submitBtn" style="background-color: #418cff">
+                                    <img src="/static/images/menu_search.png">
+                                </div>
                             </div>
-                          </div>
+                      </div>
                         </div>
                       </div>
                       {% comment %} <div class="button-area">
@@ -147,13 +154,9 @@
                         <button id="submitBtn">test</button>
                         <input type="button" class="img-button">
                       </div> {% endcomment %}
-                      <div class="button-area" id="submitBtn" style="background-color: #418cff">
-                        <img src="/static/images/menu_search.png" style="width: 30%">
-                      </div>
-
+                      
                       </div>
                     </div>
-
                   </div>
 
                 </div><!-- /.row -->
@@ -222,7 +225,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title"><strong>Is Hear?</strong></h4>
+                                {% comment %} <h4 class="modal-title"><strong>Is Hear?</strong></h4> {% endcomment %}
                             </div>
                             <div class="modal-body">
                                 <form>

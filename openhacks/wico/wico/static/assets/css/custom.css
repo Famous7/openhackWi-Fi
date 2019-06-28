@@ -40,15 +40,42 @@
 .row .col-lg-12 .card .button-area {
   display: flex;
   flex-flow: column nowrap;
-  margin-left: 10px;
 }
 
-.row .col-lg-12 .card .button-area div { //invisible area
+.row .col-lg-12 .card .button-area div {
   width: 50px;
   height: 50px;
 }
-.row .col-lg-12 .card .button-area button {  //search button
-  width: 50px;
-  height: 50px;
+.row .col-lg-12 .card .button-area img { 
+  width: 38px;
+  height: 38px;
   margin-right: 20px;
+}
+
+#submitBtn {
+  background-color: #418cff;
+  width: 56px;
+  right: 0;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  opacity: 0.7;
+}
+
+#checkMac {
+  background-color: #418cff;
+  color: white;
+  cursor: pointer;
+}
+
+#checkMac:hover {
+  background-color: hsla(216, 100%, 63%, 0.7);
+}
+
+@media screen and (max-width: 980px) {
+  #submitBtn {
+    right: 10px;
+    top: 392px;
+  }
 }

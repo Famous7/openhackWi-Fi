@@ -31,6 +31,12 @@ Googel Fonts  */
   max-height: 50px;
 }
 
+.max-small2 {
+  width: auto; height: auto;
+  max-width: 45px;
+  max-height: 45px;
+}
+
 .align-center {
   text-align: center;
 }
@@ -1254,7 +1260,7 @@ header .form-inline {
    }
   .card .box-title {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 1.5em;
     padding: 5px 0; }
   .card .weather-title.box-title {
     padding: 0 15px;
@@ -1440,14 +1446,14 @@ header .form-inline {
 .traffic-chart .ct-series-a .ct-area,
 .traffic-chart .ct-series-a .ct-slice-donut-solid,
 .traffic-chart .ct-series-a .ct-slice-pie {
-  fill: #00e7ff;
-  opacity: 0.5; }
+  fill: #23e3ce;
+  opacity: 0.4; }
 
 .traffic-chart .ct-series-b .ct-area,
 .traffic-chart .ct-series-b .ct-slice-donut-solid,
 .traffic-chart .ct-series-b .ct-slice-pie {
-  fill: #ff348b;
-  opacity: .9; }
+  fill: #ff5294;
+  opacity: .5; }
 
 .traffic-chart .ct-series-c .ct-area,
 .traffic-chart .ct-series-c .ct-slice-donut-solid,

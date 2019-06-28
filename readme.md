@@ -14,8 +14,6 @@
 
 ![image](https://user-images.githubusercontent.com/40455392/60310430-dab14580-998d-11e9-8901-261d2fdec043.png)
 
-​                                                                            [Image 1. WICO Logo]
-
 
 
 
@@ -26,8 +24,6 @@
 
 
 
-​                                                       [Image 2. Logo Design & Color Setting]
-
 
 
 **TEAM WICO**는 `Wi-fi Counter`의 약자로 측정하고자하는 Wi-Fi 수신호 내에 접속한 사람들의 스마트폰 `Mac Address (스마트폰에 부여된 고유 번호)`로 집회, 축제, 콘서트 등의 장소에 모인 사람의 숫자 계측 & 데이터 제공을 목표로 서비스를 개발했습니다.
@@ -36,11 +32,11 @@
 
 ### Team Members
 
-| <img src="https://user-images.githubusercontent.com/40455392/60309905-28787e80-998b-11e9-8f40-2583f7a662ef.jpg" width="50%" height="30%"> | 김승태(MD 좋아하는 개발자)<br />백엔드, Django 개발자. Markdown 이 멋진 작성자 본인 입니다. 고려대학교 영어영문학과 재학 중이고 곧 졸업합니다. 오픈소스 해커톤으로 中國 가고 싶어요오오오오~~~ 취미는 문서 작성 해보리기 ~~ |
+| <img src="https://user-images.githubusercontent.com/40455392/60309905-28787e80-998b-11e9-8f40-2583f7a662ef.jpg" width="50%" height="50%"> | 김승태(MD 좋아하는 개발자)<br />백엔드, Django 개발자. Markdown 이 멋진 작성자 본인 입니다. 고려대학교 영어영문학과 재학 중이고 곧 졸업합니다. 오픈소스 해커톤으로 中國 가고 싶어요오오오오~~~ 취미는 문서 작성 해보리기 ~~ |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="https://user-images.githubusercontent.com/40455392/60310247-ecdeb400-998c-11e9-8deb-3fac9bda4168.png" width="50%" height="30%"> | **강지인(일 잘하는 디자이너) <br /> 일러스트레이터, 포토샵, 영상 편집 등 디자인 방면에서 못하는 것이 없는 디자이너 유망주. 건국대학교 재학중이며 UX & UI 가릴 것 없이 우수함. 저희 우승하면 중국 보내주나요?** |
 |                                                              | **유명성(스마트 팀장)<br /> 충북대학교, `머신러닝 및 네트워크 통신` 담당**. **와이파이 네트워크 설계 및 머신러닝을 통한 Wi-Fi 접속자 인원 추산 알고리즘 디자인을 담당했다.** |
-|                                                              | **한준모(잠 못드는 개발자)<br /> 한동대학교, Front-End, `Bootstrap & JS` 사용**. **디자인 감성이 풍부하고 프론트 개발자로서 역할을 수행하는 개발 꿈나무. 강지인 팀원과 뛰어난 프론트 역량을 발휘했다** |
+| <img src="https://user-images.githubusercontent.com/40455392/60312758-75fae880-9997-11e9-850f-540fb855bb55.png" width="50%" height="30%"> | **한준모(잠 못드는 개발자)<br /> 한동대학교, Front-End, `Bootstrap & JS` 사용**. **디자인 감성이 풍부하고 프론트 개발자로서 역할을 수행하는 개발 꿈나무. 강지인 팀원과 뛰어난 프론트 역량을 발휘했다** |
 |                                                              | **최준식(피곤한 개발자)<br /> 숭실대학교, Back-End, `Django` 사용**. **명실상부 백엔드에서 큰 역량을 보인 팀원. 복잡해보이는 코드 작성도 해결하며 짧은 해커톤 기간 동안 잠을 많이 못자고 유독 걱정이 많았던 팀원이다. ** |
 
 
@@ -55,13 +51,15 @@
 
 |                           Python3                            |                            Django                            |                          Javascript                          |                            MySQL                             |                            jQuery                            |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![image](https://user-images.githubusercontent.com/40455392/60309480-f1a16900-9988-11e9-8a35-57a31446c708.png){: width="200" height="200"} | ![image](https://user-images.githubusercontent.com/40455392/60309496-0978ed00-9989-11e9-9377-237e24f58832.png){: width="100" height="100"} | ![image](https://user-images.githubusercontent.com/40455392/60309583-7c826380-9989-11e9-982b-b10a79c0cf09.png) | ![image](https://user-images.githubusercontent.com/40455392/60309601-915ef700-9989-11e9-87dc-62b05c49a327.png) | ![image](https://user-images.githubusercontent.com/40455392/60309616-a6d42100-9989-11e9-847a-5dfc2a06b084.png) |
+| ![image](https://user-images.githubusercontent.com/40455392/60309480-f1a16900-9988-11e9-8a35-57a31446c708.png) | ![image](https://user-images.githubusercontent.com/40455392/60309496-0978ed00-9989-11e9-9377-237e24f58832.png) | ![image](https://user-images.githubusercontent.com/40455392/60309583-7c826380-9989-11e9-982b-b10a79c0cf09.png) | ![image](https://user-images.githubusercontent.com/40455392/60309601-915ef700-9989-11e9-87dc-62b05c49a327.png) | ![image](https://user-images.githubusercontent.com/40455392/60309616-a6d42100-9989-11e9-847a-5dfc2a06b084.png) |
 
 
 
 ### Requirements.txt
 
 ```python
+pip install -r requirements.txt
+===============
 backcall==0.1.0
 colorama==0.4.1
 cycler==0.10.0
@@ -101,8 +99,6 @@ wcwidth==0.1.7
 
 
 
-
-
 ### 사용 장비
 
 - 네트워크 장비 : `Atheros AR9271` (Wi-Fi에 연결된 디바이스 MAC address 수집)
@@ -111,33 +107,19 @@ wcwidth==0.1.7
 
 ## 서비스 소개
 
-![1561685854977](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561685854977.png)
+![image](https://user-images.githubusercontent.com/40455392/60312730-5794ed00-9997-11e9-8f6c-d3f76cf7ff6c.png)
 
-​                                                                           [Image 3. 전설의 시작]
+![image](https://user-images.githubusercontent.com/40455392/60312691-3c29e200-9997-11e9-958e-b7f0b20b876c.png)
 
-
-
-![1561685919242](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561685919242.png)
-
-​         [Image 4. 대규모 군중이 모여 인원 추산이 어려운 콘서트, 행사장, 시위 등에 사용할 수 있는 WICO]
-
-
-
-![1561685783290](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561685783290.png)
-
-​                                                                           [Image 5. WICO Concept]
+![image](https://user-images.githubusercontent.com/40455392/60312677-274d4e80-9997-11e9-9be7-3586dba05278.png)
 
 
 
 ![image](https://user-images.githubusercontent.com/40455392/60311021-37156480-9990-11e9-8ebe-520375aa2689.png)
 
-​                                                                           [Image 6. WICO Process]
 
 
-
-![image](https://user-images.githubusercontent.com/40455392/60310489-10562e80-998e-11e9-9926-c582934d8e6c.png)
-
-​                                                                           [Image 7. Service Main Page]
+![image](https://user-images.githubusercontent.com/40455392/60312563-bc9c1300-9996-11e9-8427-d03db7af4faf.png)
 
 
 
@@ -147,13 +129,11 @@ wcwidth==0.1.7
 
 
 
-![image](https://user-images.githubusercontent.com/40455392/60310548-61662280-998e-11e9-9759-39a7af6802e1.png)[Image 8. Search Function. 일정 기간 동안 Wi-Fi에 접속한 사용자의 출입 시간과 Wi-Fi 사용 시간을 측정 가능]
+![image](https://user-images.githubusercontent.com/40455392/60310548-61662280-998e-11e9-9759-39a7af6802e1.png)
 
 ​                                                                      
 
 ![1561686006229](C:\Users\Equus\AppData\Roaming\Typora\typora-user-images\1561686006229.png)
-
-​                                   [Image 9. 기능 확장성: 실내에 있는 와이파이 사용자의 위치 확인 가능]
 
 
 
@@ -164,8 +144,6 @@ wcwidth==0.1.7
 
 
 ![image](https://user-images.githubusercontent.com/40455392/60311692-5bbf0b80-9993-11e9-8b3f-f2bc9fb299bb.png)
-
-
 
 - WICO는 사용자의 동의 없이 무작위로 Wi-Fi 내에 사용자의 디바이스 정보를 수집하거나 활용하는 행위를 일체 배제합니다. WICO에 사용자 이름과 기기 정보를 등록한 고객만이 특정 사용자로서 추정할 수 있습니다.
 
